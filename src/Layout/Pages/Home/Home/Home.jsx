@@ -1,9 +1,12 @@
+import Poster from "../Carousel/Poster";
+import Category from "../Category/Category"
 
 
 const Home = () => {
     return (
         <div>
-            This is the Indian Royals Home page.
+            <Poster></Poster>
+            <Category></Category>
         </div>
     );
 };
