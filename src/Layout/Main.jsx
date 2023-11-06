@@ -4,7 +4,7 @@ import Nav from "./Pages/Shared/Nav/Nav";
 
 const Main = () => {
     return (
-        <div>
+        <div className="bg-amber-100">
             <Nav></Nav>
             <Outlet></Outlet>
             <Footer></Footer>
