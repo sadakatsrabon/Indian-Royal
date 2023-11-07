@@ -8,15 +8,6 @@ const Nav = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
         <li><a>Item 3</a></li>
-        {/* <li tabIndex={0}>
-            <details>
-                <summary>Parent</summary>
-                <ul className="p-2 bg-slate-900 bg-opacity-80 rounded-box">
-                    <li><Link>SNav1</Link></li>
-                    <li><a>SNav2</a></li>
-                </ul>
-            </details>
-        </li> */}
     </>
 
     return (
@@ -47,3 +38,16 @@ const Nav = () => {
 };
 
 export default Nav;
+
+
+
+
+{/* <li tabIndex={0}>
+    <details>
+        <summary>Parent</summary>
+        <ul className="p-2 bg-slate-900 bg-opacity-80 rounded-box">
+            <li><Link>SNav1</Link></li>
+            <li><a>SNav2</a></li>
+        </ul>
+    </details>
+</li> */}
