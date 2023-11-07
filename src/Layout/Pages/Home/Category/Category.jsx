@@ -25,7 +25,7 @@ const Category = () => {
       <SectionTitle
         heading={"Avilable Online Delivery"}
       ></SectionTitle>
-      <div ref={sliderRef} className="keen-slider mb-12">
+      <div ref={sliderRef} className="keen-slider h-96 mb-12">
         <div className="keen-slider__slide number-slide1">
           <h3 className="text-3xl uppercase fixed bottom-1 bg-black opacity-50 ">salads</h3>
           <img src={slider1} alt="Slide Image" />

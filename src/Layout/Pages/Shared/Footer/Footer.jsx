@@ -1,11 +1,15 @@
+import logo from '../../../../assets/logo.png'
+import logo1 from '../../../../assets/logo1.png'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+
+
     return (
         <div>
             <footer className="footer p-10 bg-neutral text-neutral-content">
                 <aside>
-                    <h1 className="text-4xl ml-6 font-serif">R-I</h1>
+                    <img className='w-48' src={logo} alt="" />
                     <p>Royal Indian Restaurent<br />Providing halal foods since 2015</p>
                 </aside>
                 <nav>
