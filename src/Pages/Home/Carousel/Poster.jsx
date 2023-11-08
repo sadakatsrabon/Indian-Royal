@@ -1,14 +1,15 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import image1 from '../../../../assets/home/01.jpg'
-import image2 from '../../../../assets/home/02.jpg'
-import image3 from '../../../../assets/home/03.jpg'
-import image4 from '../../../../assets/home/04.jpg'
-import image5 from '../../../../assets/home/05.png'
-import image6 from '../../../../assets/home/06.jpg'
-import image7 from '../../../../assets/home/07.jpg'
-import image8 from '../../../../assets/home/08.png'
+// import image1 from '../../../../assets/home/01.jpg'
+import image1 from '../../../assets/home/01.jpg'
+import image2 from '../../../assets/home/02.jpg'
+import image3 from '../../../assets/home/03.jpg'
+import image4 from '../../../assets/home/04.jpg'
+import image5 from '../../../assets/home/05.png'
+import image6 from '../../../assets/home/06.jpg'
+import image7 from '../../../assets/home/07.jpg'
+import image8 from '../../../assets/home/08.png'
 
 const Poster = () => {
     return (

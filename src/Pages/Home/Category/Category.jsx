@@ -2,12 +2,13 @@ import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css";
 import "./style.css"
 
-import slider1 from "../../../../assets/home/slide1.jpg";
-import slider2 from "../../../../assets/home/slide2.jpg";
-import slider3 from "../../../../assets/home/slide3.jpg";
-import slider4 from "../../../../assets/home/slide4.jpg";
-import slider5 from "../../../../assets/home/slide5.jpg";
-import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
+import slider1 from "../../../assets/home/slide1.jpg";
+import slider2 from "../../../assets/home/slide2.jpg";
+import slider3 from "../../../assets/home/slide3.jpg";
+import slider4 from "../../../assets/home/slide4.jpg";
+import slider5 from "../../../assets/home/slide5.jpg";
+// import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {
 

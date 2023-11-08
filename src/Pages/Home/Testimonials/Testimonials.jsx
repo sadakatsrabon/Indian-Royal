@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 // Import Swiper things
 import { Pagination } from 'swiper/modules';
 
@@ -16,7 +16,7 @@ const Testimonials = () => {
     const [rating, setRating] = useState([]);
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('testimonials.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

@@ -1,7 +1,6 @@
-// import { Link } from 'react-router-dom';
-import orderImg from '../../../../assets/shop/Order.jpg'
+import orderImg from '../../../assets/shop/Order.jpg'
 import Cover from '../../Shared/Cover/Cover';
-import useMenu from '../../../../hoocks/useMenu';
+import useMenu from '../../../hoocks/useMenu';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import 'react-tabs/style/react-tabs.css';
