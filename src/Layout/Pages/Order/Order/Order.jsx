@@ -2,99 +2,65 @@
 import orderImg from '../../../../assets/shop/Order.jpg'
 import Cover from '../../Shared/Cover/Cover';
 import useMenu from '../../../../hoocks/useMenu';
-import FoodCard from '../../../../components/FoodCard/FoodCard';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import 'react-tabs/style/react-tabs.css';
 import { useState } from 'react';
+import OrderTab from '../OrderTab/OrderTab';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Order = () => {
 
-    const [tabIndex, setTabIndex] = useState(0);
+    const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks']
+    const { category } = useParams();
+    const initialIndex = categories.includes(category) ? categories.indexOf(category) : 0;
+    const [tabIndex, setTabIndex] = useState(initialIndex);
+    console.log(tabIndex);
+
 
     const [menuItems] = useMenu();
-    const desserts = menuItems.filter(item => item.category === 'dessert');
-    const pizzas = menuItems.filter(item => item.category === 'pizza');
-    const salads = menuItems.filter(item => item.category === 'salad');
-    const soups = menuItems.filter(item => item.category === 'soup');
-    const offered = menuItems.filter(item => item.category === 'offered');
+    const salad = menuItems.filter(item => item.category === 'salad');
+    const pizza = menuItems.filter(item => item.category === 'pizza');
+    const soup = menuItems.filter(item => item.category === 'soup');
+    const dessert = menuItems.filter(item => item.category === 'dessert');
+    const drinks = menuItems.filter(item => item.category === 'drinks');
 
     return (
         <div>
+            <Helmet>
+                <title>Indian Royal || Order Food</title>
+            </Helmet>
+
             <Cover bgImage={orderImg} title="Order from Royal"></Cover>
-
-            <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList>
-                    <Tab>Salad</Tab>
-                    <Tab>Pozza</Tab>
-                    <Tab>Soup</Tab>
-                    <Tab>Dessert</Tab>
-                    <Tab>Drinks</Tab>
-                </TabList>
-                <TabPanel>
-                    <div className='grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-10'>
-                        {
-                            salads.map(item => <FoodCard
-                                key={item._id}
-                                item={item}
-                            ></FoodCard>)
-                        }
-                    </div>
-                </TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
-            </Tabs>
-
-            {/* <FoodCard></FoodCard> */}
+            <div className='px-8 my-10'>
+                <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+                    <TabList className="text-center text-xl font-semibold">
+                        <Tab>Salad</Tab>
+                        <Tab>Pizza</Tab>
+                        <Tab>Soup</Tab>
+                        <Tab>Dessert</Tab>
+                        <Tab>Drinks</Tab>
+                    </TabList>
+                    <TabPanel>
+                        <OrderTab items={salad}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={pizza}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={soup}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={dessert}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={drinks}></OrderTab>
+                    </TabPanel>
+                </Tabs>
+            </div>
         </div>
     );
 };
 
 export default Order;
-
-
-
-
-
-
-
-// const [activeTab, setActiveTab] = useState(2);
-
-// const handleTabClick = (tab) => {
-//     setActiveTab(tab);
-// }
-
-{/* <div className="tabs justify-center my-4">
-    <Link
-        className={`tab tab-bordered ${activeTab === 1 ? 'tab-active' : ''}`}
-        onClick={() => handleTabClick(1)}
-    >
-        Salad
-    </Link>
-    <Link
-        className={`tab tab-bordered ${activeTab === 2 ? 'tab-active' : ''}`}
-        onClick={() => handleTabClick(2)}
-    >
-        Pizza
-    </Link>
-    <Link
-        className={`tab tab-bordered ${activeTab === 3 ? 'tab-active' : ''}`}
-        onClick={() => handleTabClick(3)}
-    >
-        Soup
-    </Link>
-    <Link
-        className={`tab tab-bordered ${activeTab === 4 ? 'tab-active' : ''}`}
-        onClick={() => handleTabClick(4)}
-    >
-        Desserts
-    </Link>
-    <Link
-        className={`tab tab-bordered ${activeTab === 5 ? 'tab-active' : ''}`}
-        onClick={() => handleTabClick(5)}
-    >
-        Drinks
-    </Link>
-</div> */}

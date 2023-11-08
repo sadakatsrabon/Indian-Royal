@@ -12,10 +12,11 @@ import MenuCategory from "../MenuCategory/MenuCategory";
 const Menu = () => {
 
     const [menuItems] = useMenu();
-    const desserts = menuItems.filter(item => item.category === 'dessert');
-    const pizzas = menuItems.filter(item => item.category === 'pizza');
     const salads = menuItems.filter(item => item.category === 'salad');
+    const pizzas = menuItems.filter(item => item.category === 'pizza');
     const soups = menuItems.filter(item => item.category === 'soup');
+    const desserts = menuItems.filter(item => item.category === 'dessert');
+    const drinks = menuItems.filter(item => item.category === 'drinks')
     const offered = menuItems.filter(item => item.category === 'offered');
 
     return (
@@ -24,35 +25,50 @@ const Menu = () => {
                 <title>Indian Royal || Menu</title>
             </Helmet>
             <Cover bgImage={menuImg} title="royal menu's"></Cover>
+
             {/* Main of the cover section */}
             <SectionTitle subHeading="Dont Miss Todays " heading="Royal's Offers "
             ></SectionTitle>
+
             {/* Offered section */}
             <MenuCategory items={offered}></MenuCategory>
-            {/* Dessert Items */}
-            <MenuCategory
-                items={desserts}
-                title="Desserts"
-                img={dessertImg}
-            ></MenuCategory>
-            {/* Pizza Menu Items */}
-            <MenuCategory
-                items={pizzas}
-                title="Pizza"
-                img={pizzaImg}
-            ></MenuCategory>
-            {/* Salad Menu Items */}
-            <MenuCategory
-                items={salads}
-                title="Salad"
-                img={saladImg}
-            ></MenuCategory>
+
             {/* Soup Menu Items */}
             <MenuCategory
                 items={soups}
                 title="Soup"
                 img={soupImg}
             ></MenuCategory>
+
+            {/* Dessert Items */}
+            <MenuCategory
+                items={desserts}
+                title="Desserts"
+                img={dessertImg}
+            ></MenuCategory>
+
+
+            {/* Salad Menu Items */}
+            <MenuCategory
+                items={salads}
+                title="Salad"
+                img={saladImg}
+            ></MenuCategory>
+
+            {/* Pizza Menu Items */}
+            <MenuCategory
+                items={pizzas}
+                title="Pizza"
+                img={pizzaImg}
+            ></MenuCategory>
+
+            {/* Drinks Items */}
+            <MenuCategory
+                items={drinks}
+                title="drinks"
+                img={dessertImg}
+            ></MenuCategory>
+
 
         </div>
     );

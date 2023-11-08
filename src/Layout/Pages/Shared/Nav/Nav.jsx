@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 const Nav = () => {
 
     const navOptions = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Our Menu</Link></li>
-        <li><Link to="/order">Order Food</Link></li>
+        <li><Link to="/"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Home</button></Link></li>
+
+        <li><Link to="/menu"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
+        
+        <li><Link to="/order/:salad"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
     </>
 
     return (

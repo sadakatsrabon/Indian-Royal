@@ -2,13 +2,13 @@
 const MenuItem = ({ item }) => {
     const { image, price, recipe, name } = item;
     return (
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 px-8">
             <img className="w-[120px] rounded-full" src={image} alt="" />
             <div>
-                <h3 className="text-green-500">{name}</h3>
+                <h3 className="text-xl text-slate-500">{name}</h3>
                 <p className="">{recipe}</p>
             </div>
-            <div className="text-blue-600 border-y-2 border-e-2 mt-2">
+            <div className="text-yellow-900 text-xl border-y-2 border-e-2 mt-2">
                 <p className=" p-5">${price}</p>
             </div>
         </div>
