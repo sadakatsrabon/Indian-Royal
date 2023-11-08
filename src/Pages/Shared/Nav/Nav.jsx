@@ -7,8 +7,10 @@ const Nav = () => {
         <li><Link to="/"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Home</button></Link></li>
 
         <li><Link to="/menu"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
-        
+
         <li><Link to="/order/:salad"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
+        
+        <li><Link to="/login"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>login</button></Link></li>
     </>
 
     return (
@@ -32,7 +34,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <Link to='/login' className="btn btn-outline text-white bg-slate-500 bg-opacity-40 ">Login</Link>
             </div>
         </div>
     );
