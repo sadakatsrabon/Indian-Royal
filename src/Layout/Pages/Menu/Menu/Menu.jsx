@@ -9,7 +9,7 @@ import useMenu from "../../../../hoocks/useMenu";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import MenuCategory from "../MenuCategory/MenuCategory";
 
-const Menu = ({ img }) => {
+const Menu = () => {
 
     const [menuItems] = useMenu();
     const desserts = menuItems.filter(item => item.category === 'dessert');
