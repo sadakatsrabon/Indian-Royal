@@ -1,16 +1,34 @@
+import { useContext } from 'react';
 import logo1 from '../../../assets/logo1.png';
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Nav = () => {
 
+    // Access of user form auth context for signOut
+    const { user, signOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        signOut()
+            .then(() => { })
+            .catch(error => console.error(error));
+    };
+
     const navOptions = <>
-        <li><Link to="/"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Home</button></Link></li>
+        <li><Link to="/"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Home</button></Link></li>
 
-        <li><Link to="/menu"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
+        <li><Link to="/menu"><button className='btn-outline border-b-2 border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
 
-        <li><Link to="/order/:salad"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
-        
-        <li><Link to="/signin"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
+        <li><Link to="/order/:salad"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
+
+
+        {
+            user ? <>
+                <li><Link to="/signin"><button className='btn-outline border-b-2 text-red-700 bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign Out</button></Link></li>
+            </> : <>
+                <li><Link to="/signin"><button onClick={handleSignOut} className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
+            </>
+        }
     </>
 
     return (
