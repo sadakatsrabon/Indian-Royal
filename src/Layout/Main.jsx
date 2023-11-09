@@ -4,10 +4,11 @@ import Nav from "../Pages/Shared/Nav/Nav";
 
 const Main = () => {
     const location = useLocation();
-    console.log(location)
+    console.log(location);
+    const noHeader = location.pathname.includes('signin');
     return (
         <div className="bg-amber-100">
-            <Nav></Nav>
+            {noHeader || <Nav></Nav>}
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

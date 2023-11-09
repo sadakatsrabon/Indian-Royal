@@ -10,7 +10,7 @@ const Nav = () => {
 
         <li><Link to="/order/:salad"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
         
-        <li><Link to="/login"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>login</button></Link></li>
+        <li><Link to="/signin"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
     </>
 
     return (
@@ -24,9 +24,9 @@ const Nav = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">
-                </a>
-                <Link to="/"><img className='w-36 rounded-lg' src={logo1} alt="" /></Link>
+                {/* <a className="btn btn-ghost normal-case text-xl">
+                </a> */}
+                <Link to="/"><img className='w-36 rounded-lg' src={logo1} alt="logo" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -34,7 +34,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn btn-outline text-white bg-slate-500 bg-opacity-40 ">Login</Link>
+                <Link to='/signin' className="btn btn-outline text-white bg-slate-500 bg-opacity-40 ">Login</Link>
             </div>
         </div>
     );
