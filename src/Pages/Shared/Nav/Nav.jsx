@@ -8,8 +8,8 @@ const Nav = () => {
     // Access of user form auth context for signOut
     const { user, signOut } = useContext(AuthContext);
 
-    const handleSignOut = () => {
-        signOut()
+    const handleSignOut = async () => {
+        await signOut()
             .then(() => { })
             .catch(error => console.error(error));
     };
@@ -25,9 +25,9 @@ const Nav = () => {
 
         {
             user ? <>
-                <li><Link to="/signin"><button className='btn-outline border-b-2 text-red-700 bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign Out</button></Link></li>
+                <li><button onClick={handleSignOut} className='btn-outline border-b-2 text-red-700 mt-2 bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign Out</button></li>
             </> : <>
-                <li><Link to="/signin"><button onClick={handleSignOut} className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
+                <li><Link to="/signin"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
             </>
         }
     </>
@@ -53,7 +53,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/signin' className="btn btn-outline text-white bg-slate-500 bg-opacity-40 ">Login</Link>
+            <p className="">{user?.displayName}</p>
             </div>
         </div>
     );

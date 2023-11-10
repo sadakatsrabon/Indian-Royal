@@ -10,6 +10,11 @@ const Login = () => {
 
     const { signIn } = useContext(AuthContext);
 
+    // const navigate = useNavigate();
+    // const location = useLocation();
+
+    // const form = location.state?.form?.pathname || "/";
+
     const handleSignin = event => {
         event.preventDefault();
         const form = event.target;
@@ -27,10 +32,11 @@ const Login = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "You Have Successfully Signed Up",
+                    title: "Successfully Signed In",
                     showConfirmButton: false,
                     timer: 1500
                 });
+                // navigate(form, {replace : true});
             })
     }
     return (
@@ -43,24 +49,34 @@ const Login = () => {
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold"><span className="text-yellow-500">Royal</span> Sign In  !</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+
+                        {/* Home button */}
+                        <Link to="/"><button className=" btn btn-outline border-0 border-b-4 border-r-2">back to home</button></Link>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSignin} className="card-body">
+
+                            {/* Email Field */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
+
+                            {/* Password field */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
-                                <label className="label">
-                                    <Link to='/signup' className="label-text-alt link link-hover font-mono text-blue-700">Create an ROYAL account</Link>
-                                </label>
                             </div>
+                            {/* Redrict to SignUp page */}
+                            <label className="label">
+                                <Link to='/signup' className="label-text-alt link link-hover font-mono text-blue-700">Create an ROYAL account</Link>
+                            </label>
+
+                            {/* Submit button */}
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary btn-outline border-0 border-y-2 border-x-4" type="submit" value="Singn In" />
                             </div>
