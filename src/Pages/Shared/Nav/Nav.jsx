@@ -17,9 +17,10 @@ const Nav = () => {
     const navOptions = <>
         <li><Link to="/"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Home</button></Link></li>
 
-        <li><Link to="/menu"><button className='btn-outline border-b-2 border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
+        <li><Link to="/menu"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
 
         <li><Link to="/order/:salad"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
+        <li><Link to="/offer"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Special</button></Link></li>
 
 
         {

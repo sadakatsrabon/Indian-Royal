@@ -19,7 +19,7 @@ const Menu = () => {
     const soups = menuItems.filter(item => item.category === 'soup');
     const desserts = menuItems.filter(item => item.category === 'dessert');
     const drinks = menuItems.filter(item => item.category === 'drinks')
-    const offered = menuItems.filter(item => item.category === 'offered');
+
 
     return (
         <div>
@@ -32,8 +32,6 @@ const Menu = () => {
             <SectionTitle subHeading="Dont Miss Todays " heading="Royal's Offers "
             ></SectionTitle>
 
-            {/* Offered section */}
-            <MenuCategory items={offered}></MenuCategory>
 
             {/* Soup Menu Items */}
             <MenuCategory
