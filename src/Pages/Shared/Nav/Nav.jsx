@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import logo1 from '../../../assets/logo1.png';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Nav = () => {
 
@@ -20,7 +21,13 @@ const Nav = () => {
         <li><Link to="/menu"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
 
         <li><Link to="/order/:salad"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
+
         <li><Link to="/offer"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Special</button></Link></li>
+
+        <li><Link to="/"><button className="">
+            <FaShoppingCart></FaShoppingCart>
+            <div className="badge">+0</div>
+        </button></Link></li>
 
 
         {
@@ -53,7 +60,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <p className="">{user?.displayName}</p>
+                <p className="">{user?.displayName}</p>
             </div>
         </div>
     );
