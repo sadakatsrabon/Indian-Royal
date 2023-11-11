@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
@@ -10,10 +10,10 @@ const Login = () => {
 
     const { signIn } = useContext(AuthContext);
 
-    // const navigate = useNavigate();
-    // const location = useLocation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    // const form = location.state?.form?.pathname || "/";
+    const forms = location.state?.form?.pathname || "/";
 
     const handleSignin = event => {
         event.preventDefault();
@@ -23,6 +23,7 @@ const Login = () => {
         // console.log(email, password);
 
         // SignIn mechanism section.
+        
         signIn(email, password)
             .then(result => {
                 const user = result.user;
@@ -36,7 +37,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                // navigate(form, {replace : true});
+                navigate(forms, {replace : true});
             })
     }
     return (

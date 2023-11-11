@@ -30,24 +30,21 @@ const Signup = () => {
                         Swal.fire({
                             position: "top-end",
                             icon: "success",
-                            title: "Update your profile doen",
+                            title: "User Profile created doen",
                             showConfirmButton: false,
                             timer: 1500
                         });
                     })
                     .catch((error) => {
                         console.error(error);
+                        // Showing Success Alart
+                        Swal.fire({
+                            position: "top-end",
+                            title: "Please try again.",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
                     })
-
-
-                // Showing Success Alart
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Congratulations, You have Successfully Signed Up",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
             })
 
     };

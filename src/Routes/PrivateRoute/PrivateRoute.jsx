@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-// import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { Circles } from "react-loader-spinner";
+import Swal from "sweetalert2";
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
 
-    // const location = useLocation();
+    const location = useLocation();
 
     if (loading) {
         return <div className="mx-auto justify-center items-center text-center">
@@ -26,12 +27,13 @@ const PrivateRoute = ({ children }) => {
         return children;
     }
     // 
-
-    // return <Navigate
-    //     to="/"
-    //     state={{ formLocation: location.pathname }} // Passing only the pathname as state
-    //     replace
-    // />
+    Swal.fire({
+        position: "top-end",
+        title: "Pleas SignIn to get offers",
+        showConfirmButton: false,
+        timer: 1500
+    });
+    return <Navigate to="/signin" state={{ formLocation: location.pathname }} replace />
 
 };
 

@@ -34,6 +34,7 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
+        // Need to place tis functio in a variable . for this reason we add "const" at last tiem.
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
