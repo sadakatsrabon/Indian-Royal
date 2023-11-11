@@ -3,11 +3,14 @@ import logo1 from '../../../assets/logo1.png';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
+import useCart from '../../../hoocks/useCart';
 
 const Nav = () => {
 
     // Access of user form auth context for signOut
     const { user, signOut } = useContext(AuthContext);
+    const { data } = useCart();
+    console.log(data)
 
     const handleSignOut = async () => {
         await signOut()
@@ -26,7 +29,7 @@ const Nav = () => {
 
         <li><Link to="/"><button className="">
             <FaShoppingCart></FaShoppingCart>
-            <div className="badge">+0</div>
+            <div className="badge">+{data?.length || 0}</div>
         </button></Link></li>
 
 
@@ -60,7 +63,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <p className="">{user?.displayName}</p>
+                <p className="">{user?.displayName || 'Guest'}</p>
             </div>
         </div>
     );
