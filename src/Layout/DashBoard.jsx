@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../Pages/Shared/Footer/Footer";
 
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome } from "react-icons/fa";
@@ -15,12 +15,16 @@ const DashBoard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 min-h-full bg-yellow-400 bg-opacity-80 text-base-content">
                         {/* Sidebar content here */}
-                        <li><Link to=""><FaHome />Home</Link></li>
-                        <li><Link to=""><FaShoppingCart />My Cart</Link></li>
-                        <li><Link to=""><FaCalendarAlt />Reservations</Link></li>
-                        <li><Link to=""><FaWallet />Payment History</Link></li>
+                        <li><NavLink to="/dashboard/home"><FaHome />Home</NavLink></li>
+                        <li><NavLink to="/dashboard/mycart"><FaShoppingCart />My Cart</NavLink></li>
+                        <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Reservations</NavLink></li>
+                        <li><NavLink to="/dashboard/payments"><FaWallet />Payment History</NavLink></li>
+                        <div className="divider"></div>
+                        <li><NavLink to="/"><FaHome />Home</NavLink></li>
+                        <li><NavLink to="/menu">Royal Menu</NavLink></li>
+                        <li><NavLink to="/Order/salad">Royal Food</NavLink></li>
                     </ul>
 
                 </div>
