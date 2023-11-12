@@ -11,18 +11,18 @@ import { Helmet } from 'react-helmet-async';
 
 const Order = () => {
 
-    const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks']
+    const categories = ['salads', 'pizza', 'soups', 'desserts', 'drinks']
     const { category } = useParams();
-    const initialIndex = categories.includes(category) ? categories.indexOf(category) : 0;
+    const initialIndex = categories.includes(category.toLocaleLowerCase()) ? categories.indexOf(category.toLocaleLowerCase()) : 0;
     const [tabIndex, setTabIndex] = useState(initialIndex);
-    console.log(tabIndex);
+    console.log(tabIndex, category);
 
 
     const [menuItems] = useMenu();
     const salad = menuItems.filter(item => item.category === 'salad');
     const pizza = menuItems.filter(item => item.category === 'pizza');
-    const soup = menuItems.filter(item => item.category === 'soup');
-    const dessert = menuItems.filter(item => item.category === 'dessert');
+    const soup = menuItems.filter(item => item.category === 'soups');
+    const dessert = menuItems.filter(item => item.category === 'desserts');
     const drinks = menuItems.filter(item => item.category === 'drinks');
 
     return (

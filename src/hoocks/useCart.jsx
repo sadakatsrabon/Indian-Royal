@@ -12,7 +12,7 @@ const useCart = () => {
             return response.json();
         },
     })
-    console.log(cart)
+    // console.log(cart)
 
     return [cart, refetch];
 };
