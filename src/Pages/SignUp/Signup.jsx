@@ -1,13 +1,14 @@
 // import React from 'react';
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const Signup = () => {
 
+    const navigate = useNavigate();
     const { createUser, updateUserProfile } = useContext(AuthContext);
 
 
@@ -22,18 +23,35 @@ const Signup = () => {
         // Code for SignUp mechanism
         createUser(email, password, name, imgUrl)
             .then(result => {
+
                 const loggedUser = result.user
                 console.log(loggedUser)
+
                 updateUserProfile(name, imgUrl)
                     .then(() => {
-                        console.log('User Profile Info Updted Succesfully')
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "User Profile created doen",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
+                        const savedUser = { name: name, email: email }
+                        console.log(name, email)
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "User Profile created doen",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                }
+                            })
+
+
                     })
                     .catch((error) => {
                         console.error(error);
@@ -44,6 +62,8 @@ const Signup = () => {
                             showConfirmButton: false,
                             timer: 1500
                         });
+                        navigate("/")
+
                     })
             })
 
