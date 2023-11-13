@@ -29,6 +29,13 @@ const SocialLogin = () => {
                 })
                     .then(res => res.json())
                     .then(() => {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Succesfull",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
                         navigate(forms, { replace: true });
                     })
             })
