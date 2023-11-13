@@ -1,5 +1,5 @@
 import orderImg from '../../../assets/shop/Order.jpg'
-import Cover from '../../Shared/Cover/Cover';
+import Cover from '../../../Shared/Cover/Cover';
 import useMenu from '../../../hoocks/useMenu';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -21,8 +21,8 @@ const Order = () => {
     const [menuItems] = useMenu();
     const salad = menuItems.filter(item => item.category === 'salad');
     const pizza = menuItems.filter(item => item.category === 'pizza');
-    const soup = menuItems.filter(item => item.category === 'soups');
-    const dessert = menuItems.filter(item => item.category === 'desserts');
+    const soup = menuItems.filter(item => item.category === 'soup');
+    const dessert = menuItems.filter(item => item.category === 'dessert');
     const drinks = menuItems.filter(item => item.category === 'drinks');
 
     return (

@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import logo1 from '../../../assets/logo1.png';
+import logo1 from '../../assets/logo.png';
 import { Link } from "react-router-dom";
-import { AuthContext } from '../../../providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
-import useCart from '../../../hoocks/useCart';
+import useCart from '../../hoocks/useCart';
 
 const Nav = () => {
 

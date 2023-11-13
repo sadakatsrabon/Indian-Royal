@@ -1,7 +1,7 @@
 import MenuCategory from "../Menu/MenuCategory/MenuCategory";
 import useMenu from "../../hoocks/useMenu";
 import { Helmet } from "react-helmet-async";
-import Cover from "../Shared/Cover/Cover";
+import Cover from "../../Shared/Cover/Cover";
 
 import menuImg from '../../assets/menu/special.jpg';
 import { useContext } from "react";

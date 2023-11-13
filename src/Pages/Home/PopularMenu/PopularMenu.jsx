@@ -1,5 +1,5 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import MenuItem from "../../Shared/MenuItem/MenuItem";
+import MenuItem from "../../../Shared/MenuItem/MenuItem";
 import useMenu from "../../../hoocks/useMenu";
 
 const PopularMenu = () => {
