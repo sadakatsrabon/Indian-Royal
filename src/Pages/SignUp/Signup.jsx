@@ -1,15 +1,21 @@
 // import React from 'react';
 
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Signup = () => {
 
-    const navigate = useNavigate();
     const { createUser, updateUserProfile } = useContext(AuthContext);
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const forms = location.state?.form?.pathname || "/";
 
 
     const handleSignUp = event => {
@@ -50,6 +56,7 @@ const Signup = () => {
                                     });
                                 }
                             })
+                        navigate(forms, { replace: true });
 
 
                     })
@@ -62,8 +69,6 @@ const Signup = () => {
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        navigate("/")
-
                     })
             })
 
@@ -118,15 +123,17 @@ const Signup = () => {
                                 <input type="text" name="ImgUrl" placeholder="Yor face-photo-url , for security verify." className="input input-bordered" required />
                             </div>
 
-                            {/* Rederict to Sign In */}
+                            {/* Rederict to Sign Up */}
                             <label className="label">
-                                <Link to='/signin' className="label-text-alt link link-hover font-mono text-blue-700">Go to Royal Login /SignIn Page.</Link>
+                                Alredy have an accoutn ? <p><Link to='/signIn' className="label-text-alt link link-hover font-semibold text-blue-700 ml-2">Click here to Login</Link></p>
                             </label>
 
                             {/* SignUp Submit Button */}
                             <div className="form-control mt-6">
                                 <input className="btn btn-warning btn-outline border-0 border-y-2 border-x-4" type="submit" value="Singn Up" />
                             </div>
+                            {/* Social SignUp */}
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SocialLogin = () => {
     const { googleSignIn } = useContext(AuthContext);
@@ -15,7 +16,21 @@ const SocialLogin = () => {
             .then(res => {
                 const loggedUser = res.user;
                 console.log(loggedUser)
-                navigate(forms, { replace: true });
+
+                const savedUser = { name: loggedUser.displayName, email: loggedUser.email };
+                console.log(loggedUser.displayName, loggedUser.email)
+
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(savedUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(forms, { replace: true });
+                    })
             })
     }
 
