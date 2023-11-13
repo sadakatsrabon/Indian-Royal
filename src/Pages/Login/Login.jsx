@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
 
@@ -23,7 +24,7 @@ const Login = () => {
         // console.log(email, password);
 
         // SignIn mechanism section.
-        
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
@@ -37,7 +38,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate(forms, {replace : true});
+                navigate(forms, { replace: true });
             })
     }
     return (
@@ -74,17 +75,17 @@ const Login = () => {
                             </div>
                             {/* Redrict to SignUp page */}
                             <label className="label">
-                                <Link to='/signup' className="label-text-alt link link-hover font-mono text-blue-700">Create an ROYAL account</Link>
+                                Create an ROYAL account ? <p><Link to='/signup' className="label-text-alt link link-hover font-semibold text-blue-700 ml-2">Click here</Link></p>
                             </label>
-
                             {/* Submit button */}
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary btn-outline border-0 border-y-2 border-x-4" type="submit" value="Singn In" />
                             </div>
+                            <SocialLogin />
                         </form>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 };
