@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -24,7 +25,7 @@ const AuthProvider = ({ children }) => {
     };
 
     // Google SignIn
-    const googleSignIn = () =>{
+    const googleSignIn = () => {
         setLoading(true);
         return signInWithPopup(auth, GoogleProvider)
     }
@@ -45,6 +46,18 @@ const AuthProvider = ({ children }) => {
         // Need to place tis functio in a variable . for this reason we add "const" at last tiem.
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
+
+            // get and send access token
+            if (currentUser) {
+                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                    .then(data => {
+                        console.log(data.data.token)
+                        localStorage.setItem('access-token', data.data.token)
+                    })
+            }
+            else{
+                localStorage.removeItem('access-token')
+            }
             setLoading(false);
         });
         return () => unsubscribe();
