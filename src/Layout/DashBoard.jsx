@@ -19,40 +19,44 @@ const DashBoard = () => {
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
-                <div className="drawer-side bg-yellow-400 bg-opacity-80">
+                <div className="drawer-side bg-opacity-80">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
 
                     {
                         isAdmin ?
                             <>
-                                {/* Sidebar content here */}
-                                <ul className="menu p-4 w-80 min-h-full text-base-content">
-                                    <li><NavLink to="/dashboard/allusers"><FaHome />Adim Home</NavLink></li>
-                                    <li>
-                                        <NavLink to="/dashboard/mycart"><FaUtensilSpoon />Add Items<span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
-                                    </li>
-                                    <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Manage Items</NavLink></li>
-                                    <li><NavLink to="/dashboard/payments"><FaBook />Manage Booking</NavLink></li>
-                                    <li><NavLink to="/dashboard/payments"><FaUsers />All Users</NavLink></li>
-                                    <div className="divider"></div>
-                                    <li><NavLink to="/"><FaHome />Home</NavLink></li>
-                                    <li><NavLink to="/menu">Royal Menu</NavLink></li>
-                                    <li><NavLink to="/Order/salad">Royal Food</NavLink></li>
-                                </ul>
+                                <div className="bg-emerald-600 opacity-90 h-full">
+                                    {/* Sidebar content here */}
+                                    <ul className="menu p-4 w-80 min-h-full text-base-content">
+                                        <li><NavLink to="/dashboard/allusers"><FaHome />Adim Home</NavLink></li>
+                                        <li>
+                                            <NavLink to="/dashboard/mycart"><FaUtensilSpoon />Add Items<span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
+                                        </li>
+                                        <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Manage Items</NavLink></li>
+                                        <li><NavLink to="/dashboard/payments"><FaBook />Manage Booking</NavLink></li>
+                                        <li><NavLink to="/dashboard/payments"><FaUsers />All Users</NavLink></li>
+                                        <div className="divider"></div>
+                                        <li><NavLink to="/"><FaHome />Home</NavLink></li>
+                                        <li><NavLink to="/menu">Royal Menu</NavLink></li>
+                                        <li><NavLink to="/Order/salad">Royal Food</NavLink></li>
+                                    </ul>
+                                </div>
                             </> : <>
-                                {/* Sidebar content here */}
-                                <ul className="menu p-4 w-80 min-h-full text-base-content">
-                                    <li><NavLink to="/dashboard/home"><FaHome />Home</NavLink></li>
-                                    <li>
-                                        <NavLink to="/dashboard/mycart"><FaShoppingCart />My Cart <span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
-                                    </li>
-                                    <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Reservations</NavLink></li>
-                                    <li><NavLink to="/dashboard/payments"><FaWallet />Payment History</NavLink></li>
-                                    <div className="divider"></div>
-                                    <li><NavLink to="/"><FaHome />Home</NavLink></li>
-                                    <li><NavLink to="/menu">Royal Menu</NavLink></li>
-                                    <li><NavLink to="/Order/salad">Royal Food</NavLink></li>
-                                </ul>
+                                <div className="bg-yellow-400 opacity-90 h-full">
+                                    {/* Sidebar content here */}
+                                    <ul className="menu p-4 w-80 min-h-full text-base-content">
+                                        <li><NavLink to="/dashboard/home"><FaHome />Home</NavLink></li>
+                                        <li>
+                                            <NavLink to="/dashboard/mycart"><FaShoppingCart />My Cart <span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
+                                        </li>
+                                        <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Reservations</NavLink></li>
+                                        <li><NavLink to="/dashboard/payments"><FaWallet />Payment History</NavLink></li>
+                                        <div className="divider"></div>
+                                        <li><NavLink to="/"><FaHome />Home</NavLink></li>
+                                        <li><NavLink to="/menu">Royal Menu</NavLink></li>
+                                        <li><NavLink to="/Order/salad">Royal Food</NavLink></li>
+                                    </ul>
+                                </div>
                             </>
                     }
 
