@@ -1,13 +1,11 @@
 // useAxiosSecure.js
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProvider';
-// import AuthContext from './AuthContext';
+import useAuth from './useAuth';
 
 const useAxiosSecure = () => {
-    // const [axiosSecure, setAxiosSecure] = useState(null);
-    const { signOut } = useContext(AuthContext);
+    const { signOut } = useAuth();
 
     const navigate = useNavigate();
 
@@ -19,19 +17,10 @@ const useAxiosSecure = () => {
 
 
     useEffect(() => {
-        // Create an Axios instance with a base URL
-
-        // 
-        // 
-        // toDo : comment
+  
         const instance = axios.create({
             baseURL: 'your-base-url',
         });
-        // 
-        // 
-        // 
-
-        // Interceptor to inject authorization header
         axiosSecure.interceptors.request.use((config) => {
             const token = localStorage.getItem('access-token');
             if (token) {
@@ -54,12 +43,6 @@ const useAxiosSecure = () => {
                 return Promise.reject(error);
             }
         );
-
-        // 
-        // 
-        // setAxiosSecure(instance);
-        // 
-        // 
 
         // No need to return anything from cleanup function
         // since we are not performing any cleanup here
