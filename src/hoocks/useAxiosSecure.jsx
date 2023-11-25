@@ -6,21 +6,14 @@ import useAuth from './useAuth';
 
 const useAxiosSecure = () => {
     const { signOut } = useAuth();
-
+    // ToCheck: return to home page with navigate;
     const navigate = useNavigate();
 
-
-    // 
     const axiosSecure = axios.create({
         baseURL: 'http://localhost:5000'
-    })
-
+    });
 
     useEffect(() => {
-  
-        const instance = axios.create({
-            baseURL: 'your-base-url',
-        });
         axiosSecure.interceptors.request.use((config) => {
             const token = localStorage.getItem('access-token');
             if (token) {
@@ -30,7 +23,7 @@ const useAxiosSecure = () => {
         });
 
         // Interceptor to handle 401 and 403 responses
-        instance.interceptors.response.use(
+        axiosSecure.interceptors.response.use(
             (response) => response,
             async (error) => {
                 if (error.response && (error.response.status === 401 || error.response.status === 403)) {

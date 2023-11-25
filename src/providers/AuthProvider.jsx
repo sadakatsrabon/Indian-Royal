@@ -48,6 +48,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
 
             // get and send access token
+            //  toCheck: url
             if (currentUser) {
                 axios.post('http://localhost:5000/jwt', { email: currentUser.email })
                     .then(data => {

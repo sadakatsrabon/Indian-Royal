@@ -22,13 +22,14 @@ const MyCart = () => {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
-                    .then(data => { 
+                    .then(data => {
                         console.log(data)
-                        
+
+                        // toDo:
                         //  is undefined.
                         // Need to solve it.
                         // And refetch is not working properly with the swal
-                        
+
                         if (data.deletedCount > 0) {
                             refetch();
                             Swal.fire({
@@ -67,9 +68,9 @@ const MyCart = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>Food</th>
+                            <th className="">Food</th>
                             <th>Item Name</th>
-                            <th>Price</th>
+                            <th className="text-end">Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -91,7 +92,7 @@ const MyCart = () => {
                                     <td>
                                         {cartItem.name}
                                     </td>
-                                    <div className="text-end"><td>${cartItem.price}</td></div>
+                                    <td className="text-end">${cartItem.price}</td>
                                     <td>
                                         <button onClick={() => handleDelete(cartItem)} className="btn btn-outline bg-red-400 btn-xs">X</button>
                                     </td>

@@ -2,16 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../hoocks/useAxiosSecure";
 
 const AllUsers = () => {
+    const [axiosSecure] = useAxiosSecure();
     const { data: users = [], isLoading, isError, refetch } = useQuery({
-        queryKey: 'users', // Updated to use queryKey as an object property
+        queryKey: ['users'], // toCheck: write - 'users' with out an array(code of trainer)
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await axiosSecure.get('/users');
             if (!res.ok) {
                 throw new Error('Network response was not ok');
             }
-            return res.json();
+            return res.data;
         },
     });
 
@@ -22,6 +24,28 @@ const AllUsers = () => {
     if (isError) {
         return <div>Error fetching data</div>;
     }
+
+    // const handleMakeAdmin = user => {
+    //     axiosSecure.patch(`/users/admin/${user._id}`)
+    //         .then(response => {
+    //             const data = response.data;
+    //             console.log(data);
+    //             if (data.modifiedCount) {
+    //                 refetch();
+    //                 Swal.fire({
+    //                     position: "top-end",
+    //                     icon: "success",
+    //                     title: `${user.name} is added to Admin!`,
+    //                     showConfirmButton: false,
+    //                     timer: 1500
+    //                 });
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.error("Error making user admin:", error);
+    //         });
+    // };
+
 
     const handleMakeAdmin = user => {
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
@@ -74,7 +98,7 @@ const AllUsers = () => {
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{
-                                        user.role === 'admin' ? 'Admin' :
+                                        user.role === 'admin' ? 'admin' :
                                             <button onClick={() => handleMakeAdmin(user)} className="btn btn-outline btn-circle btn-sm"><FaUserShield /></button>
 
                                     }</td>
