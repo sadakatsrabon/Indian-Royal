@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../../../hoocks/useAxiosSecure";
+import useAxiosSecure from "../../../hoocks/useAxiosSecure";
 
 const AllUsers = () => {
     // const [axiosSecure] = useAxiosSecure();

@@ -11,7 +11,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Special from "../Pages/Special/Special";
 import DashBoard from "../Layout/DashBoard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
-import AllUsers from "../Pages/Dashboard/MyCart/AllUsers/AllUsers";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
     {
