@@ -56,12 +56,13 @@ const AuthProvider = ({ children }) => {
                         // Set Access token to Local storage
                         // But not recomanded to set in local storage
                         localStorage.setItem('access-token', data.data.token)
+                        setLoading(false);
                     })
             }
             else {
                 localStorage.removeItem('access-token')
             }
-            setLoading(false);
+
         });
         return () => unsubscribe();
     }, [])

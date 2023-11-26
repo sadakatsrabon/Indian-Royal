@@ -5,6 +5,17 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../hoocks/useAxiosSecure";
 
 const AllUsers = () => {
+    // const [axiosSecure] = useAxiosSecure();
+    // const { data: users = [], refetch } = useQuery(['/users'], async () => {
+    //     const res = await axiosSecure.get('users')
+    //     return res.data;
+    // });
+
+
+
+    // 
+    // 
+    // 
     const [axiosSecure] = useAxiosSecure();
     const { data: users = [], isLoading, isError, refetch } = useQuery({
         queryKey: ['users'], // toCheck: write - 'users' with out an array(code of trainer)
@@ -17,6 +28,10 @@ const AllUsers = () => {
         },
     });
 
+    // 
+    // 
+    // 
+
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -24,27 +39,6 @@ const AllUsers = () => {
     if (isError) {
         return <div>Error fetching data</div>;
     }
-
-    // const handleMakeAdmin = user => {
-    //     axiosSecure.patch(`/users/admin/${user._id}`)
-    //         .then(response => {
-    //             const data = response.data;
-    //             console.log(data);
-    //             if (data.modifiedCount) {
-    //                 refetch();
-    //                 Swal.fire({
-    //                     position: "top-end",
-    //                     icon: "success",
-    //                     title: `${user.name} is added to Admin!`,
-    //                     showConfirmButton: false,
-    //                     timer: 1500
-    //                 });
-    //             }
-    //         })
-    //         .catch(error => {
-    //             console.error("Error making user admin:", error);
-    //         });
-    // };
 
 
     const handleMakeAdmin = user => {

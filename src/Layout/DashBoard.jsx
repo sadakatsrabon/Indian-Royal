@@ -36,7 +36,7 @@ const DashBoard = () => {
                                         </li>
                                         <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Manage Items</NavLink></li>
                                         <li><NavLink to="/dashboard/payments"><FaBook />Manage Booking</NavLink></li>
-                                        <li><NavLink to="/dashboard/payments"><FaUsers />All Users</NavLink></li>
+                                        <li><NavLink to="/dashboard/allusers"><FaUsers />All Users</NavLink></li>
                                         <div className="divider"></div>
                                         <li><NavLink to="/"><FaHome />Home</NavLink></li>
                                         <li><NavLink to="/menu">Royal Menu</NavLink></li>

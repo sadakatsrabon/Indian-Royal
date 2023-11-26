@@ -6,7 +6,6 @@ import useAuth from './useAuth';
 
 const useAxiosSecure = () => {
     const { signOut } = useAuth();
-    // ToCheck: return to home page with navigate;
     const navigate = useNavigate();
 
     const axiosSecure = axios.create({
