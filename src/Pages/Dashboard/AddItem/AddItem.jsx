@@ -2,16 +2,18 @@ import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { useForm } from 'react-hook-form';
 import logoImg from '../../../assets/logo.png'
+import useAxiosSecure from "../../../hoocks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const image_hosting_api = import.meta.env.VITE_image_upload_api;
 
 const AddItem = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [axiosSecure] = useAxiosSecure();
+    const { register, handleSubmit, reset } = useForm();
     // Image hosting
     const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_api}`;
 
     const onSubmit = data => {
-        console.log(data)
 
         const formData = new FormData();
         formData.append('image', data.image[0])
@@ -27,12 +29,36 @@ const AddItem = () => {
                     const { name, price, category, recipe } = data;
                     const newItem = { name, price: parseFloat(price), category, recipe, image: imgUrl };
                     console.log(newItem)
+                    axiosSecure.post('/menu', newItem)
+                        .then(data => {
+                            console.log('after posting new menu item', data.data)
+                            if (data.data.insertedId) {
+                                reset();
+                                Swal.fire({
+                                    title: "Successfully added this item",
+                                    showClass: {
+                                        popup: `
+                                    animate__animated
+                                    animate__fadeInUp
+                                    animate__faster
+                                  `
+                                    },
+                                    hideClass: {
+                                        popup: `
+                                    animate__animated
+                                    animate__fadeOutDown
+                                    animate__faster
+                                  `
+                                    }
+                                });
+                            }
+                        })
                 }
             })
     };
 
-    console.log(errors);
-    console.log(image_hosting_api)
+    // console.log(errors);
+    // console.log(image_hosting_api)
 
     return (
         <div className="w-full p-10">

@@ -22,7 +22,6 @@ const useCart = () => {
             //         authorization: `bearer ${token}`
             //     }
             // })
-            console.log('res data from axios', res)
             return res.data;
         },
     })
