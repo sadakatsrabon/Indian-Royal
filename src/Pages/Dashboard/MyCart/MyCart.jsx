@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import useCart from "../../../hoocks/useCart";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCart = () => {
     const [cart, refetch] = useCart();
@@ -24,11 +25,6 @@ const MyCart = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
-
-                        // toDo:
-                        //  is undefined.
-                        // Need to solve it.
-                        // And refetch is not working properly with the swal
 
                         if (data.deletedCount > 0) {
                             refetch();
@@ -54,7 +50,7 @@ const MyCart = () => {
                     <h3>Total Price  = {total}$</h3>
                 </div>
                 <div className="text-center mt-10">
-                    <button className="btn btn-sm w-56 md:w-96 bg-yellow-400 btn-outline">Pay</button>
+                    <Link to="/dashboard/payment"><button className="btn btn-sm w-56 md:w-96 bg-yellow-400 btn-outline">Pay</button></Link>
                 </div>
                 <div className="divider"></div>
             </div>
