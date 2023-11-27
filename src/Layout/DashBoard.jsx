@@ -4,9 +4,11 @@ import Footer from "../Shared/Footer/Footer";
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensilSpoon, FaBook, FaUsers } from "react-icons/fa";
 import useCart from "../hoocks/useCart";
 import useAdmin from "../hoocks/useAdmin";
+import useMenu from "../hoocks/useMenu";
 
 const DashBoard = () => {
     const [cart] = useCart();
+    const [menu] = useMenu()
 
     // ToDo: Load data from the server to have dynamic isAdmin based on data
     // const isAdmin = true;
@@ -16,9 +18,9 @@ const DashBoard = () => {
         <div>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
-                    <Outlet />
+                <div className="drawer-content">
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <Outlet />
 
                 </div>
                 <div className="drawer-side bg-opacity-80">
@@ -32,9 +34,9 @@ const DashBoard = () => {
                                     <ul className="menu p-4 w-80 min-h-full text-base-content">
                                         <li><NavLink to="/dashboard/allusers"><FaHome />Adim Home</NavLink></li>
                                         <li>
-                                            <NavLink to="/dashboard/addItem"><FaUtensilSpoon />Add Items<span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
+                                            <NavLink to="/dashboard/addItem"><FaUtensilSpoon />Add Items</NavLink>
                                         </li>
-                                        <li><NavLink to="/dashboard/manageitem"><FaCalendarAlt />Manage Items</NavLink></li>
+                                        <li><NavLink to="/dashboard/manageitem"><FaCalendarAlt />Manage Items<span className="abdge badge-primary rounded-md px-2">{menu?.length || 0}</span></NavLink></li>
                                         <li><NavLink to="/dashboard/payments"><FaBook />Manage Booking</NavLink></li>
                                         <li><NavLink to="/dashboard/allusers"><FaUsers />All Users</NavLink></li>
                                         <div className="divider"></div>
