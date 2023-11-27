@@ -29,11 +29,11 @@ const [isAdmin, isAdminLoading] = useAdmin();
     // 
     Swal.fire({
         position: "top-end",
-        title: "Pleas SignIn to get offers",
+        title: "You are not an admin",
         showConfirmButton: false,
-        timer: 1500
+        timer: 5500
     });
-    return <Navigate to="/signin" state={{ formLocation: location.pathname }} replace />
+    return <Navigate to="/" state={{ formLocation: location.pathname }} replace />
 
 };
 

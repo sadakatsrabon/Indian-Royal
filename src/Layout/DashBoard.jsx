@@ -32,7 +32,7 @@ const DashBoard = () => {
                                     <ul className="menu p-4 w-80 min-h-full text-base-content">
                                         <li><NavLink to="/dashboard/allusers"><FaHome />Adim Home</NavLink></li>
                                         <li>
-                                            <NavLink to="/dashboard/mycart"><FaUtensilSpoon />Add Items<span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
+                                            <NavLink to="/dashboard/addItem"><FaUtensilSpoon />Add Items<span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
                                         </li>
                                         <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Manage Items</NavLink></li>
                                         <li><NavLink to="/dashboard/payments"><FaBook />Manage Booking</NavLink></li>
