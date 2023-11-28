@@ -17,6 +17,7 @@ const Payment = () => {
     return (
         <div>
             <Helmet> <title>Indian Royal || Payment</title></Helmet>
+            
             <SectionTitle
                 heading="Pay now"
             ></SectionTitle>
