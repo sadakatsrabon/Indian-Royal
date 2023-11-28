@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hoocks/useAxiosSecure";
 import useAuth from "../../../hoocks/useAuth";
 
-const CheckOutForm = ({ price }) => {
+const CheckOutForm = ({ price, cart }) => {
 
     const stripe = useStripe();
     const elements = useElements();
@@ -77,7 +77,22 @@ const CheckOutForm = ({ price }) => {
         if (paymentIntent.status === 'succeeded') {
             setTransectionId(paymentIntent.id)
 
-            // toDo : nextSteps-
+            // Save payment information to the server
+            const payment = {
+                price,
+                email: user?.email,
+                transectionId: paymentIntent.id,
+                quantity: cart.length,
+                itemId: cart.map(item => item._id),
+                itemNames: cart.map(item => item.name)
+            }
+            axiosSecure.post('/paymens', payment)
+            .then(res =>{
+                console.log(res.data)
+                if(res.data.insertedId){
+                    // display confirm
+                }
+            })
         }
 
     }

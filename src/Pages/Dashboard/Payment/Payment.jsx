@@ -23,7 +23,7 @@ const Payment = () => {
             ></SectionTitle>
             <h2 className="text-center mb-6yyyyy">Please be sure after payment. I will not be returnable</h2>
             <Elements stripe={stripePromise}>
-                <CheckOutForm price={price}></CheckOutForm>
+                <CheckOutForm cart={cart} price={price}></CheckOutForm>
             </Elements>
         </div>
     );
