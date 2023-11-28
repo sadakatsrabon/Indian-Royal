@@ -17,11 +17,11 @@ const Payment = () => {
     return (
         <div>
             <Helmet> <title>Indian Royal || Payment</title></Helmet>
-            
+
             <SectionTitle
                 heading="Pay now"
             ></SectionTitle>
-            <h2 className="text-center mb-6yyyyy">Please be sure after payment. I will not be returnable</h2>
+            <h2 className="text-center mb-6">Please be sure after payment. I will not be returnable</h2>
             <Elements stripe={stripePromise}>
                 <CheckOutForm cart={cart} price={price}></CheckOutForm>
             </Elements>
