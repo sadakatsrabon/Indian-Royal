@@ -18,10 +18,12 @@ const CheckOutForm = ({ price, cart }) => {
     // console.log(clientSecret)
 
     useEffect(() => {
-        axiosSecure.post('/create-paymetn-intent', { price })
-            .then(res => {
-                setClientSecret(res.data.clientSecret);
-            })
+        if (price > 0) {
+            axiosSecure.post('/create-paymetn-intent', { price })
+                .then(res => {
+                    setClientSecret(res.data.clientSecret);
+                })
+        }
     }, [price, axiosSecure])
 
     const handleSubmit = async (event) => {
@@ -82,17 +84,20 @@ const CheckOutForm = ({ price, cart }) => {
                 price,
                 email: user?.email,
                 transectionId: paymentIntent.id,
+                date: new Date(),
                 quantity: cart.length,
-                itemId: cart.map(item => item._id),
+                status: 'Service pending',
+                cartItems: cart.map(item => item._id),
+                foodItems: cart.map(item => item.foodId),
                 itemNames: cart.map(item => item.name)
             }
             axiosSecure.post('/paymens', payment)
-            .then(res =>{
-                console.log(res.data)
-                if(res.data.insertedId){
-                    // display confirm
-                }
-            })
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        // display confirm
+                    }
+                })
         }
 
     }
@@ -116,12 +121,12 @@ const CheckOutForm = ({ price, cart }) => {
                         },
                     }}
                 />
-                {/* <div className="divider"></div> */}
-                {/* <div className="text-center mt-2"> */}
-                <button className="btn btn-outline btn-sm w-28 bg-yellow-400" type="submit" disabled={!stripe || !clientSecret || loading}>
-                    Pay
-                </button>
-                {/* </div> */}
+                <div className="divider"></div>
+                <div className="text-center mt-2">
+                    <button className="btn btn-outline btn-sm w-28 bg-yellow-400" type="submit" disabled={!stripe || !clientSecret || loading}>
+                        Pay
+                    </button>
+                </div>
             </form>
             {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
             {transectionId && <p className="text-green-600 ml-8 text-center">Transection Successfulll</p>}

@@ -40,7 +40,7 @@ const useAxiosSecure = () => {
         // No need to return anything from cleanup function
         // since we are not performing any cleanup here
 
-    }, [signOut, navigate, axiosSecure]);
+    }, [signOut, navigate]);
 
     // Return the axiosSecure instance outside the useEffect
     return [axiosSecure];
