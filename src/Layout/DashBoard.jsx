@@ -31,7 +31,7 @@ const DashBoard = () => {
                                 <div className="bg-emerald-600 opacity-90 h-full">
                                     {/* Sidebar content here */}
                                     <ul className="menu p-4 w-80 min-h-full text-base-content">
-                                        <li><NavLink to="/dashboard/allusers"><FaHome />Adim Home</NavLink></li>
+                                        <li><NavLink to="/dashboard/adminhome"><FaHome />Adim Home</NavLink></li>
                                         <li>
                                             <NavLink to="/dashboard/addItem"><FaUtensilSpoon />Add Items</NavLink>
                                         </li>
@@ -48,7 +48,7 @@ const DashBoard = () => {
                                 <div className="bg-yellow-400 opacity-90 h-full">
                                     {/* Sidebar content here */}
                                     <ul className="menu p-4 w-80 min-h-full text-base-content">
-                                        <li><NavLink to="/dashboard/home"><FaHome />Home</NavLink></li>
+                                        <li><NavLink to="/dashboard/userhome"><FaHome />Home</NavLink></li>
                                         <li>
                                             <NavLink to="/dashboard/mycart"><FaShoppingCart />My Cart <span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
                                         </li>

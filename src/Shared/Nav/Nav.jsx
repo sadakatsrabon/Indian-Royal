@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from '../../hoocks/useCart';
+import useAdmin from '../../hoocks/useAdmin';
 
 const Nav = () => {
 
+    const [isAdmin] = useAdmin();
+
     // Access of user form auth context for signOut
     const { user, signOut } = useContext(AuthContext);
-    const [ cart ] = useCart();
-    // Can not access Datat form useCart. So that the result of 'console.log' is undefined; Need to fix it.
-    // console.log(cart)
+    const [cart] = useCart();
 
     const handleSignOut = async () => {
         await signOut()
@@ -20,19 +21,18 @@ const Nav = () => {
     };
 
     const navOptions = <>
-        <li><Link to="/"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Home</button></Link></li>
 
         <li><Link to="/menu"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
 
         <li><Link to="/order/:salad"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
 
-        <li><Link to="/offer"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Special</button></Link></li>
+        <li><Link to={!isAdmin ? '/dashboard/userhome' : 'dashboard/adminhome'}><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Dashboard</button></Link></li>
 
         <li><Link to="/dashboard/mycart">
             <button className="">
-            <FaShoppingCart></FaShoppingCart>
-            <div className="badge">+{cart?.length || 0}</div>
-        </button>
+                <FaShoppingCart></FaShoppingCart>
+                <div className="badge">+{cart?.length || 0}</div>
+            </button>
         </Link></li>
 
 
