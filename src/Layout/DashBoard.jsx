@@ -10,8 +10,6 @@ const DashBoard = () => {
     const [cart] = useCart();
     const [menu] = useMenu()
 
-    // ToDo: Load data from the server to have dynamic isAdmin based on data
-    // const isAdmin = true;
     const [isAdmin] = useAdmin();
 
     return (

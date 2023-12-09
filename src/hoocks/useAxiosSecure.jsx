@@ -6,6 +6,7 @@ import useAuth from './useAuth';
 
 
 const axiosSecure = axios.create({
+    // toDo: Change the base url after host
     baseURL: 'http://localhost:5000'
 });
 

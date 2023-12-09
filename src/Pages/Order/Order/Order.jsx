@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const Order = () => {
-
+// ToDo: Need to change Menu Catagories
     const categories = ['salads', 'pizza', 'soups', 'desserts', 'drinks']
     const { category } = useParams();
     const initialIndex = categories.includes(category.toLocaleLowerCase()) ? categories.indexOf(category.toLocaleLowerCase()) : 0;
