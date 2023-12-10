@@ -8,7 +8,6 @@ import Order from "../Pages/Order/Order/Order";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/SignUp/Signup";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
-import Special from "../Pages/Special/Special";
 import DashBoard from "../Layout/DashBoard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
@@ -18,6 +17,10 @@ import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import ManageBooking from "../components/HotelBooking/ManageBooking/ManageBooking";
+import Bookin from "../components/HotelBooking/Bookin";
+import ContactUs from "../Pages/ContactUs/ContactUs";
+
 
 export const router = createBrowserRouter([
     {
@@ -45,9 +48,17 @@ export const router = createBrowserRouter([
                 element: <Signup></Signup>
             },
             {
-                path: '/Offer',
-                element: <PrivateRoute> <Special></Special> </PrivateRoute>
-            }
+                path: '/book',
+                element: <Bookin></Bookin>
+            },
+            {
+                path: '/contact',
+                element: <ContactUs></ContactUs>
+            },
+            // {
+            //     path: '/Offer',
+            //     element: <PrivateRoute> <Special></Special> </PrivateRoute>
+            // }
         ],
     },
     {
@@ -77,7 +88,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manageBooking',
-                element: <AdminRoute> </AdminRoute>
+                element: <AdminRoute> <ManageBooking></ManageBooking> </AdminRoute>
             },
             {
                 path: 'addItem',
