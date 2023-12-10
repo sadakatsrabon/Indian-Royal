@@ -14,11 +14,18 @@ import MenuCategory from "../MenuCategory/MenuCategory";
 const Menu = () => {
 
     const [menuItems] = useMenu();
-    const salads = menuItems.filter(item => item.category === 'salad');
-    const pizzas = menuItems.filter(item => item.category === 'pizza');
+    const populars = menuItems.filter(item => item.category === 'popular');
+    const meats = menuItems.filter(item => item.category === 'meat');
+    const fishs = menuItems.filter(item => item.category === 'fish');
+    const eggs = menuItems.filter(item => item.category === 'egg');
+    const prawns = menuItems.filter(item => item.category === 'prawn');
+    const rices = menuItems.filter(item => item.category === 'rice');
+    const roti_pastas = menuItems.filter(item => item.category === 'roti_pastaa');
+    const complete_meals = menuItems.filter(item => item.category === 'complete_meal');
+    const salad_raitas = menuItems.filter(item => item.category === 'salad_raita');
     const soups = menuItems.filter(item => item.category === 'soup');
     const desserts = menuItems.filter(item => item.category === 'dessert');
-    const drinks = menuItems.filter(item => item.category === 'drinks')
+    const drinks = menuItems.filter(item => item.category === 'drinks');
 
 
     return (
@@ -33,33 +40,82 @@ const Menu = () => {
             ></SectionTitle>
 
 
-            {/* Soup Menu Items */}
+            {/* Popular Menu Items */}
             <MenuCategory
-                items={soups}
-                title="Soup"
+                items={populars}
+                title="popular"
                 img={soupImg}
             ></MenuCategory>
 
-            {/* Dessert Items */}
+            {/* Meat Items */}
             <MenuCategory
-                items={desserts}
-                title="Desserts"
+                items={meats}
+                title="meat"
                 img={dessertImg}
             ></MenuCategory>
 
 
-            {/* Salad Menu Items */}
+            {/* Fish Items */}
             <MenuCategory
-                items={salads}
-                title="Salad"
+                items={fishs}
+                title="fish"
                 img={saladImg}
             ></MenuCategory>
 
-            {/* Pizza Menu Items */}
+            {/* Eggs Items */}
             <MenuCategory
-                items={pizzas}
-                title="Pizza"
+                items={eggs}
+                title="egg"
                 img={pizzaImg}
+            ></MenuCategory>
+
+            {/* Prawns Items */}
+            <MenuCategory
+                items={prawns}
+                title="praun"
+                img={dessertImg}
+            ></MenuCategory>
+            {/* Rice Items */}
+            <MenuCategory
+                items={rices}
+                title="rice"
+                img={soupImg}
+            ></MenuCategory>
+
+            {/* Rotu-pasta Items */}
+            <MenuCategory
+                items={roti_pastas}
+                title="roti_pasta"
+                img={dessertImg}
+            ></MenuCategory>
+
+            {/* CompleteMeals Items */}
+            <MenuCategory
+                items={complete_meals}
+                title="complete_meal"
+                img={pizzaImg}
+            ></MenuCategory>
+
+            {/* Salad Items */}
+            <MenuCategory
+                items={salad_raitas}
+                title="salad_raita"
+                img={saladImg}
+            ></MenuCategory>
+
+            {/* Soup Items */}
+            <MenuCategory
+                items={soups}
+                title="soup"
+                img={dessertImg}
+            ></MenuCategory>
+
+
+            {/* Desserts Items */}
+            <MenuCategory
+                items={desserts}
+                title="dessert"
+                img={dessertImg}
             ></MenuCategory>
 
             {/* Drinks Items */}
@@ -68,7 +124,6 @@ const Menu = () => {
                 title="drinks"
                 img={dessertImg}
             ></MenuCategory>
-
 
         </div>
     );

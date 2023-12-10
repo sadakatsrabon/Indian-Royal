@@ -75,11 +75,18 @@ const AddItem = () => {
                         {...register("category", { required: true })}
                         className="select select-error w-full">
                         <option disabled>Category</option>
-                        <option>Pizza</option>
-                        <option>Soup</option>
-                        <option>Salad</option>
-                        <option>Desserts</option>
-                        <option>Drinks</option>
+                        <option>popular</option>
+                        <option>meat</option>
+                        <option>fish</option>
+                        <option>egg</option>
+                        <option>praun</option>
+                        <option>rice</option>
+                        <option>roti_pasta</option>
+                        <option>complete_meal</option>
+                        <option>salad_raita</option>
+                        <option>soup</option>
+                        <option>dessert</option>
+                        <option>drinks</option>
                     </select>
 
                     {/* Item Name */}
