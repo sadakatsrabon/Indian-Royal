@@ -73,16 +73,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-
-
-
-{/* <li tabIndex={0}>
-    <details>
-        <summary>Parent</summary>
-        <ul className="p-2 bg-slate-900 bg-opacity-80 rounded-box">
-            <li><Link>SNav1</Link></li>
-            <li><a>SNav2</a></li>
-        </ul>
-    </details>
-</li> */}

@@ -34,7 +34,7 @@ const DashBoard = () => {
                                             <NavLink to="/dashboard/addItem"><FaUtensilSpoon />Add Items</NavLink>
                                         </li>
                                         <li><NavLink to="/dashboard/manageitem"><FaCalendarAlt />Manage Items<span className="abdge badge-primary rounded-md px-2">{menu?.length || 0}</span></NavLink></li>
-                                        <li><NavLink to="/dashboard/payments"><FaBook />Manage Booking</NavLink></li>
+                                        <li><NavLink to="/dashboard/manageBooking"><FaBook />Manage Booking</NavLink></li>
                                         <li><NavLink to="/dashboard/allusers"><FaUsers />All Users</NavLink></li>
                                         <div className="divider"></div>
                                         <li><NavLink to="/"><FaHome />Home</NavLink></li>

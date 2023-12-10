@@ -14,6 +14,7 @@ import '@smastrom/react-rating/style.css'
 
 const Testimonials = () => {
     const [rating, setRating] = useState([]);
+    console.log(rating);
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
@@ -46,9 +47,9 @@ const Testimonials = () => {
                                         value={review.rating}
                                         onChange={setRating}
                                     />
-                                    <button className="btn btn-outline btn-error btn-sm" type="button" onClick={() => setRating(0)}>
+                                    {/* <button className="btn btn-outline btn-error btn-sm" type="button" onClick={() => setRating(0)}>
                                         Reset
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                             {/* additional reviews */}
