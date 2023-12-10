@@ -50,8 +50,8 @@ const DashBoard = () => {
                                         <li>
                                             <NavLink to="/dashboard/mycart"><FaShoppingCart />My Cart <span className="abdge badge-primary rounded-md px-2">+{cart?.length || 0}</span></NavLink>
                                         </li>
-                                        <li><NavLink to="/dashboard/reservarions"><FaCalendarAlt />Reservations</NavLink></li>
-                                        <li><NavLink to="/dashboard/payments"><FaWallet />Payment History</NavLink></li>
+                                        <li><NavLink to="/dashboard/reservation"><FaCalendarAlt />Reservations</NavLink></li>
+                                        <li><NavLink to="/dashboard/payHistory"><FaWallet />Payment History</NavLink></li>
                                         <div className="divider"></div>
                                         <li><NavLink to="/"><FaHome />Home</NavLink></li>
                                         <li><NavLink to="/menu">Royal Menu</NavLink></li>

@@ -14,7 +14,6 @@ const ContactUs = () => {
                 <p className="text-xl"><span className="p-2">Telegram : </span>+885 026365141</p>
                 <p className="text-xl"><span className="p-2">Email : </span>indian@royal.com</p>
             </div>
-
         </div>
     );
 };

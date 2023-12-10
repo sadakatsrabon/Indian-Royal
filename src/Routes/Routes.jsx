@@ -20,6 +20,8 @@ import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import ManageBooking from "../components/HotelBooking/ManageBooking/ManageBooking";
 import Bookin from "../components/HotelBooking/Bookin";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Reservation from "../Pages/Dashboard/Reservation/Reservation";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
 export const router = createBrowserRouter([
@@ -55,6 +57,7 @@ export const router = createBrowserRouter([
                 path: '/contact',
                 element: <ContactUs></ContactUs>
             },
+            
             // {
             //     path: '/Offer',
             //     element: <PrivateRoute> <Special></Special> </PrivateRoute>
@@ -76,6 +79,14 @@ export const router = createBrowserRouter([
             {
                 path: 'payment',
                 element: <Payment></Payment>
+            },
+            {
+                path: 'reservation',
+                element: <Reservation></Reservation>
+            },
+            {
+                path: 'payHistory',
+                element:<PaymentHistory></PaymentHistory>
             },
             // Admin Routes
             {
