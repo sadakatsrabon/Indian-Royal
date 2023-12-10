@@ -1,5 +1,4 @@
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import featuredImg from '../../../assets/home/featured.jpg'
 import hotelFeatured from '../../../assets/hotel/hotel1.jpg'
 
 // import css 
