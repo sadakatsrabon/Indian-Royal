@@ -1,6 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
-
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensilSpoon, FaBook, FaUsers } from "react-icons/fa";
 import useCart from "../hoocks/useCart";
 import useAdmin from "../hoocks/useAdmin";
@@ -60,7 +59,6 @@ const DashBoard = () => {
                                 </div>
                             </>
                     }
-
                 </div>
             </div>
             <Footer />

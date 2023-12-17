@@ -57,11 +57,6 @@ export const router = createBrowserRouter([
                 path: '/contact',
                 element: <ContactUs></ContactUs>
             },
-            
-            // {
-            //     path: '/Offer',
-            //     element: <PrivateRoute> <Special></Special> </PrivateRoute>
-            // }
         ],
     },
     {
