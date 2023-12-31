@@ -4,6 +4,7 @@ import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensilSpoon, FaBook
 import useCart from "../hoocks/useCart";
 import useAdmin from "../hoocks/useAdmin";
 import useMenu from "../hoocks/useMenu";
+import { RiMenuUnfoldLine } from "react-icons/ri";
 
 const DashBoard = () => {
     const [cart] = useCart();
@@ -16,7 +17,8 @@ const DashBoard = () => {
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    <label htmlFor="my-drawer-2" className="btn btn-Outline border-green-500 border-x-4 drawer-button lg:hidden">Drawer</label>
+                    <label htmlFor="my-drawer-2" className="btn btn-Outline border-green-500 border-x-4 drawer-button lg:hidden"><RiMenuUnfoldLine />
+</label>
                     <Outlet />
                 </div>
                 <div className="drawer-side bg-opacity-80">
