@@ -5,6 +5,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from '../../hoocks/useCart';
 import useAdmin from '../../hoocks/useAdmin';
+import { FiLogOut } from "react-icons/fi";
 
 const Nav = () => {
 
@@ -22,11 +23,11 @@ const Nav = () => {
 
     const navOptions = <>
 
-        <li><Link to="/menu"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
+        <li><Link to="/menu"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Food Menu</button></Link></li>
 
-        <li><Link to="/order/:salad"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
+        <li><Link to="/order/:salad"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Order Food</button></Link></li>
 
-        <li><Link to={!isAdmin ? '/dashboard/userhome' : 'dashboard/adminhome'}><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Dashboard</button></Link></li>
+        <li><Link to={!isAdmin ? '/dashboard/userhome' : 'dashboard/adminhome'}><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Dashboard</button></Link></li>
 
         <li><Link to="/dashboard/mycart">
             <button className="">
@@ -38,9 +39,9 @@ const Nav = () => {
 
         {
             user ? <>
-                <li><button onClick={handleSignOut} className='btn-outline border-b-2 text-red-700 mt-2 bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign Out</button></li>
+                <li><button onClick={handleSignOut} className='btn-outline text-black bg-red-500 mt-2'><FiLogOut /></button></li>
             </> : <>
-                <li><Link to="/signin"><button className='btn-outline border-b-2 text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
+                <li><Link to="/signin"><button className='btn-outline text-white bg-black p-2 bg-opacity-40 uppercase font-semibold rounded-md'>Sign In</button></Link></li>
             </>
         }
     </>
