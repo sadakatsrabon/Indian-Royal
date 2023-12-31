@@ -50,7 +50,7 @@ const MyCart = () => {
                     <h3>Total Price  = {total}$</h3>
                 </div>
                 <div className="text-center mt-10">
-                    <Link to="/dashboard/payment"><button className="btn btn-sm w-56 md:w-96 bg-yellow-400 btn-outline">Pay</button></Link>
+                    <Link to="/dashboard/payment"><button className="btn btn-sm w-56 md:w-96 bg-yellow-400 btn-outline">Proceed to Pay</button></Link>
                 </div>
                 <div className="divider"></div>
             </div>
