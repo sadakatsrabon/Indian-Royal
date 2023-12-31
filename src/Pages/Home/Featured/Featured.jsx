@@ -10,7 +10,7 @@ const Featured = () => {
         <div className='featured-item bg-fixed text-white pt-8 my-20'>
             <SectionTitle heading="featured item"></SectionTitle>
             <div className='md:flex justify-center items-center bg-slate-600 bg-opacity-70 pt-20 pb-12 px-36'>
-                <div className=' w-[1200px]'>
+                <div className=' w-[200px] sm:w-[1200px]'>
                     <img className='rounded-2xl' src={hotelFeatured} alt="" />
                 </div>
                 <div className='md:ml-10'>

@@ -56,8 +56,6 @@ const Nav = () => {
                         {navOptions}
                     </ul>
                 </div>
-                {/* <a className="btn btn-ghost normal-case text-xl">
-                </a> */}
                 <Link to="/"><img className='w-36 rounded-lg' src={logo1} alt="logo" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
