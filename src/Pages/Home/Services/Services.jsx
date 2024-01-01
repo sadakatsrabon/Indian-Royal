@@ -2,11 +2,12 @@ import { TbBrandBooking } from "react-icons/tb";
 import { MdOutlineNoFood } from "react-icons/md";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { TbTruckDelivery } from "react-icons/tb";
+import chef from "../../../assets/home/chef.jpg"
 
 const Services = () => {
     return (
         <div className="flex mt-32 justify-around">
-            <h2 className="text-5xl my-auto">Image</h2>
+            <h2 className="text-5xl my-auto">{chef}</h2>
             <div>
                 <div className="border border-black p-4 m-8">
                     <div className="font-bold relative">
