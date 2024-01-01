@@ -6,8 +6,10 @@ import chef from "../../../assets/home/chef.jpg"
 
 const Services = () => {
     return (
-        <div className="flex mt-32 justify-around">
-            <h2 className="text-5xl my-auto">{chef}</h2>
+        <div className=" sm:flex mt-32 justify-around">
+            <div className="w-30">
+            <img className=" my-auto" src={chef} alt="" />
+            </div>
             <div>
                 <div className="border border-black p-4 m-8">
                     <div className="font-bold relative">
