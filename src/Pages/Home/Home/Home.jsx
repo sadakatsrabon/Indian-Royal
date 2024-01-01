@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import Poster from "../Carousel/Poster";
-import Category from "../Category/Category"
-import Featured from "../Featured/Featured";
-import PopularMenu from "../PopularMenu/PopularMenu";
-import Testimonials from "../Testimonials/testimonials";
 import Services from "../Services/Services";
+import Category from "../Category/Category"
+import PopularMenu from "../PopularMenu/PopularMenu";
+import Featured from "../Featured/Featured";
+import Testimonials from "../Testimonials/Testimonials";
 
 
 const Home = () => {

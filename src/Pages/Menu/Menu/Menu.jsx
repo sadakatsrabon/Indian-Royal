@@ -36,7 +36,7 @@ const Menu = () => {
             <Cover bgImage={menuImg} title="royal menu's"></Cover>
 
             {/* Main of the cover section */}
-            <SectionTitle subHeading="Dont Miss Todays " heading="Royal's Offers "
+            <SectionTitle subHeading="Dont Miss Todays " heading="Royal Menus "
             ></SectionTitle>
 
 

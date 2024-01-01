@@ -40,21 +40,18 @@ const Testimonials = () => {
                         key={review._id}
                     >
                         <div className="mb-20 mt-10">
-                            {/* users reviews stars */}
-                            <div>
-                                <div className="mx-auto" style={{ maxWidth: 180, width: '100%' }}>
-                                    <Rating
-                                        value={review.rating}
-                                        onChange={setRating}
-                                    />
-                                    {/* <button className="btn btn-outline btn-error btn-sm" type="button" onClick={() => setRating(0)}>
-                                        Reset
-                                    </button> */}
+                            <div className="card w-[1000px] h-50 bg-neutral text-neutral-content mx-auto">
+                                <div className="card-body items-center text-center">
+                                    <h2 className="card-title">{review.name}</h2>
+                                    <p>{review.details}</p>
+                                    <div className="card-actions justify-end w-44">
+                                        <Rating
+                                            value={review.rating}
+                                            onChange={setRating}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            {/* additional reviews */}
-                            <p>{review.details}</p>
-                            <h3 className="text-2xl">{review.name}</h3>
                         </div>
                     </SwiperSlide>)
                 }

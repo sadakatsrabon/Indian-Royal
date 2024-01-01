@@ -8,9 +8,6 @@ import slider3 from "../../../assets/home/slide3.jpg";
 import slider4 from "../../../assets/home/slide4.jpg";
 import slider5 from "../../../assets/home/slide5.jpg";
 import slider6 from "../../../assets/menu/banner3.jpg";
-// import slider5 from "../../../assets/home/slide5.jpg";
-// import slider5 from "../../../assets/home/slide5.jpg";
-// import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {

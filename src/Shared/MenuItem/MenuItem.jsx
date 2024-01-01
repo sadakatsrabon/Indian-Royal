@@ -2,7 +2,7 @@
 const MenuItem = ({ item }) => {
     const { image, price, recipe, name } = item;
     return (
-        <div className="border-2">
+        <div className="border border-black rounded-lg">
             <div className="flex flex-row-reverse justify-between space-x-4 px-8">
                 <img className="w-[120px] h-[10
                 0px] py-auto pt-4" src={image} alt="" />
