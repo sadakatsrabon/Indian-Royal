@@ -8,9 +8,9 @@ const Services = () => {
     return (
         <div className=" sm:flex mt-32 justify-around">
             <div className="w-30">
-            <img className=" my-auto" src={chef} alt="" />
+                <img className=" my-auto" src={chef} alt="" />
             </div>
-            <div>
+            <div className="grid grid-cols-2">
                 <div className="border border-black p-4 m-8">
                     <div className="font-bold relative">
                         <div className="absolute  mt-[-30px] z-10 text-4xl text-yellow-500 bg-gray-700 rounded"><TbBrandBooking /></div>
