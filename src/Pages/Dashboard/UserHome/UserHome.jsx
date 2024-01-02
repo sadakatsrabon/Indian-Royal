@@ -15,9 +15,7 @@ const UserHome = () => {
     });
     return (
         <div className="p-20">
-            <h2>Regular user home is Creating</h2>
             <h2 className="text-3xl">Hi, {user.displayName}</h2>
-            <h2 className="text-2xl">Payment : {chart.userPayment || 0} $</h2>
             <h2 className="text-2xl mt-20 text-center text-red-600">Working on this page. Please Skip it</h2>
 
             <div className="stats shadow">
@@ -30,7 +28,7 @@ const UserHome = () => {
 
                 <div className="stat place-items-center">
                     <div className="stat-title">Payment Histry</div>
-                    <div className="stat-value text-secondary">4,200</div>
+                    <div className="stat-value text-secondary"> <h2 className="text-2xl">{chart.userPayment || 0} $</h2></div>
                     <div className="stat-desc text-secondary">↗︎ 40 (2%)</div>
                 </div>
 
@@ -41,7 +39,7 @@ const UserHome = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 
