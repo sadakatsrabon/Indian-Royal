@@ -41,7 +41,7 @@ const Order = () => {
             <Cover bgImage={orderImg} title="Order from Royal"></Cover>
             <div className='px-8 my-10'>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                    <TabList className="text-center text-xl font-semibold">
+                    <TabList className="text-center text-xl">
                         <Tab>Popular</Tab>
                         <Tab>Meat</Tab>
                         <Tab>Fish</Tab>
