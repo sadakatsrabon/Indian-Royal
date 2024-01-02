@@ -8,6 +8,7 @@ import { useState } from 'react';
 import OrderTab from '../OrderTab/OrderTab';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Order = () => {
     // ToDo: Need to change Menu Catagories
@@ -40,6 +41,9 @@ const Order = () => {
 
             <Cover bgImage={orderImg} title="Order from Royal"></Cover>
             <div className='px-8 my-10'>
+                <SectionTitle
+                    heading={"menu tab"}
+                ></SectionTitle>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList className="text-center text-xl">
                         <Tab>Popular</Tab>
