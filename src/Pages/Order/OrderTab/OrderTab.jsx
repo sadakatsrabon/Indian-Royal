@@ -1,6 +1,5 @@
 import FoodCard from "../../../components/FoodCard/FoodCard";
 
-// Import Swiper and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -18,7 +17,7 @@ const OrderTab = ({ items }) => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className='grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-10'>
+                    <div className='grid sm:grid-cols-2 mt-6 md:grid-cols-3 2xl:grid-cols-4 gap-10'>
                         {
                             items.map(item =>
                                 <FoodCard
