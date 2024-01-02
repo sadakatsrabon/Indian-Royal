@@ -16,7 +16,7 @@ const UserHome = () => {
     return (
         <div className="p-20">
             <h2 className="text-3xl">Hi, {user.displayName}</h2>
-            <h2 className="text-2xl mt-20 text-center text-red-600">Working on this page. Please Skip it</h2>
+            <h2 className="text-2xl mt-20 text-center text-red-600 mb-10">Working on this page. Please Skip it</h2>
 
             <div className="stats shadow">
 
