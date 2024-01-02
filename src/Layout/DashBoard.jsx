@@ -44,7 +44,7 @@ const DashBoard = () => {
                                     </ul>
                                 </div>
                             </> : <>
-                                <div className="bg-yellow-400 opacity-90 h-full">
+                                <div className="bg-slate-400 opacity-90 h-full">
                                     {/* Sidebar content here */}
                                     <ul className="menu p-4 w-80 min-h-full text-base-content">
                                         <li><NavLink to="/dashboard/userhome"><FaHome />Home</NavLink></li>
