@@ -13,7 +13,7 @@ export const data = [
 ];
 
 export const options = {
-    title: "My Daily Activities",
+    title: "Your Order History",
 };
 
 const UserHome = () => {
@@ -30,14 +30,12 @@ const UserHome = () => {
     return (
         <div className="p-20">
             <h2 className="text-3xl">Hi, {user.displayName}</h2>
-            <h2 className="text-2xl mt-20 text-center text-red-600 mb-10">Working on this page. Please Skip it</h2>
-
-            <div className="stats shadow">
-
+            {/* Stats */}
+                <h4 className="text-3xl font-semibold text-center">Your current activities</h4>
+            <div className="stats shadow ">
                 <div className="stat place-items-center">
                     <div className="stat-title">Order on process</div>
-                    <div className="stat-value">31K</div>
-                    <div className="stat-desc">From January 1st to February 1st</div>
+                    <div className="stat-value">2 Item</div>
                 </div>
 
                 <div className="stat place-items-center">
@@ -51,19 +49,18 @@ const UserHome = () => {
                     <div className="stat-value">1,200</div>
                     <div className="stat-desc">↘︎ 90 (14%)</div>
                 </div>
-                {/* Chart div */}
-                <div>
-                    <Chart
-                        chartType="PieChart"
-                        data={data}
-                        options={options}
-                        width={"100%"}
-                        height={"400px"}
-                    />
-                </div>
-
             </div>
-
+            {/* Chart div */}
+            <div className="mt-20 rounded-xl">
+                <Chart
+                    chartType="PieChart"
+                    data={data}
+                    options={options}
+                    width={"90%"}
+                    height={"200px"}
+                    className="rounded-lg"
+                />
+            </div>
         </div >
     );
 };
