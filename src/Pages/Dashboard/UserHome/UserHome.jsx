@@ -1,6 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hoocks/useAuth";
 import useAxiosSecure from "../../../hoocks/useAxiosSecure";
+import { Chart } from "react-google-charts";
+
+export const data = [
+    ["Task", "Hours per Day"],
+    ["Work", 11],
+    ["Eat", 2],
+    ["Commute", 2],
+    ["Watch TV", 2],
+    ["Sleep", 7],
+];
+
+export const options = {
+    title: "My Daily Activities",
+};
 
 const UserHome = () => {
     const { user } = useAuth();
@@ -37,9 +51,19 @@ const UserHome = () => {
                     <div className="stat-value">1,200</div>
                     <div className="stat-desc">↘︎ 90 (14%)</div>
                 </div>
+                {/* Chart div */}
+                <div>
+                    <Chart
+                        chartType="PieChart"
+                        data={data}
+                        options={options}
+                        width={"100%"}
+                        height={"400px"}
+                    />
+                </div>
 
             </div>
-            
+
         </div >
     );
 };
