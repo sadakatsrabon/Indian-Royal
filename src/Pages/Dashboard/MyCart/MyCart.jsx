@@ -46,7 +46,7 @@ const MyCart = () => {
             </Helmet>
             <div>
                 <div className="uppercase font-semibold flex justify-around mt-20 text-xl">
-                    <h3>Total items = {cart.length}</h3>
+                    <h3>Selected_items = {cart.length}</h3>
                     <h3>Total Price  = {total}$</h3>
                 </div>
                 <div className="text-center mt-10">
