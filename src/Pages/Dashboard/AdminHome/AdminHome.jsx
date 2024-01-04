@@ -34,7 +34,7 @@ const AdminHome = () => {
     return (
         <div className="w-full m-4">
             <div className="text-center pb-8">
-                <h2 className="text-3xl">You are viewing as an administrator {`(${user.displayName})`} </h2>
+                <h2 className="text-3xl">You are viewing as an administrator <span className="text-green-500">{`(${user.displayName})`}</span> </h2>
 
             </div>
             <div className="stats shadow">

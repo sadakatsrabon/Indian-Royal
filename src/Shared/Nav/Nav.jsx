@@ -31,8 +31,8 @@ const Nav = () => {
 
         <li><Link to="/dashboard/mycart">
             <button className="">
-                <FaShoppingCart></FaShoppingCart>
-                <div className="badge">+{cart?.length || 0}</div>
+                
+                {!isAdmin ? <div className="badge mt-2 ml-[-20px]"><FaShoppingCart></FaShoppingCart>+{cart?.length || 0}</div> : ''}
             </button>
         </Link></li>
 
