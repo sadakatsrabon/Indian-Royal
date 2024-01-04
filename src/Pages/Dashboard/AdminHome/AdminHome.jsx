@@ -5,10 +5,18 @@ import { Chart } from "react-google-charts";
 
 export const data = [
     ["Element", "Density", { role: "style" }],
-    ["Copper", 8.94, "#b87333"], // RGB value
-    ["Silver", 10.49, "silver"], // English color name
-    ["Gold", 19.3, "gold"],
-    ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
+    ["Popular", 8.94, "#b87333"], // RGB value
+    ["Meat", 10.49, "silver"], // English color name
+    ["Fish", 19.3, "gold"],
+    ["Egg", 21.45, "color: #e5e4e2"], // CSS-style declaration
+    ["Praun", 8.94, "#b87334"], // RGB value
+    ["Rice", 10.49, "silver"], // English color name
+    ["Roti_Pasta", 19.3, "gold"],
+    ["Complete Meal", 21.45, "color: #e5e4e2"], // CSS-style declaration
+    ["Salad_Raita", 8.94, "#b87333"], // RGB value
+    ["Soup", 10.49, "silver"], // English color name
+    ["Dessert", 19.3, "gold"],
+    ["Drinks", 21.45, "color: #e5e4e2"], // CSS-style declaration
 ];
 
 const AdminHome = () => {
@@ -29,7 +37,7 @@ const AdminHome = () => {
 
             <div className="stats shadow">
 
-                {/* revenue */}
+                {/* sowing revenue */}
                 <div className="stat">
                     <div className="stat-figure text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -49,7 +57,7 @@ const AdminHome = () => {
                     <div className="stat-desc">29% more than last month</div>
                 </div>
 
-                {/* User Chart */}
+                {/* Admin Chart */}
                 <div className="stat">
                     <div className="stat-figure text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
