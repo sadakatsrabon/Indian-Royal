@@ -6,14 +6,14 @@ import { Chart } from "react-google-charts";
 export const data = [
     ["Task", "Hours per Day"],
     ["Total Order", 11],
-    ["Payments", 2],
-    ["Commute", 2],
-    ["Watch TV", 2],
-    ["Sleep", 7],
+    ["Payments", 22],
+    ["Hotel booking", 2],
+    // ["Watch TV", 2],
+    // ["Sleep", 7],
 ];
 
 export const options = {
-    title: "Your Order History",
+    title: "Your Activity",
 };
 
 const UserHome = () => {
