@@ -5,11 +5,18 @@ import { Chart } from "react-google-charts";
 
 export const data = [
     ["Task", "Hours per Day"],
-    ["Work", 11],
-    ["Eat", 2],
-    ["Commute", 2],
-    ["Watch TV", 2],
-    ["Sleep", 7],
+    ["Popular Items", 11],
+    ["Meat", 2],
+    ["Fishe", 2],
+    ["Egg", 2],
+    ["Praun", 2],
+    ["Rice", 2],
+    ["Praun", 2],
+    ["Roti_Pasta", 2],
+    ["Compete Meal", 2],
+    ["soup", 2],
+    ["Dessert", 2],
+    ["Drinks", 7],
 ];
 
 export const options = {
