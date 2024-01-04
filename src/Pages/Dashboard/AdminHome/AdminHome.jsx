@@ -4,24 +4,12 @@ import useAxiosSecure from "../../../hoocks/useAxiosSecure";
 import { Chart } from "react-google-charts";
 
 export const data = [
-    ["Task", "Hours per Day"],
-    ["Popular Items", 11],
-    ["Meat", 2],
-    ["Fishe", 2],
-    ["Egg", 2],
-    ["Praun", 2],
-    ["Rice", 2],
-    ["Praun", 2],
-    ["Roti_Pasta", 2],
-    ["Compete Meal", 2],
-    ["soup", 2],
-    ["Dessert", 2],
-    ["Drinks", 7],
+    ["Element", "Density", { role: "style" }],
+    ["Copper", 8.94, "#b87333"], // RGB value
+    ["Silver", 10.49, "silver"], // English color name
+    ["Gold", 19.3, "gold"],
+    ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
 ];
-
-export const options = {
-    title: "Your Order History",
-};
 
 const AdminHome = () => {
     const { user } = useAuth();
@@ -80,14 +68,7 @@ const AdminHome = () => {
             </div>
             {/* Chart div */}
             <div className="mt-20 rounded-xl">
-                <Chart
-                    chartType="PieChart"
-                    data={data}
-                    options={options}
-                    width={"90%"}
-                    height={"200px"}
-                    className="rounded-lg"
-                />
+                <Chart chartType="ColumnChart" width="100%" height="400px" data={data} />
             </div>
         </div>
     );
