@@ -33,8 +33,10 @@ const AdminHome = () => {
 
     return (
         <div className="w-full m-4">
-            <h2 className="text-3xl">Hi, {user.displayName}</h2>
+            <div className="text-center pb-8">
+                <h2 className="text-3xl">You are viewing as an administrator {`(${user.displayName})`} </h2>
 
+            </div>
             <div className="stats shadow">
 
                 {/* sowing revenue */}
@@ -75,7 +77,8 @@ const AdminHome = () => {
 
             </div>
             {/* Chart div */}
-            <div className="mt-20 rounded-xl">
+            <div className="mt-20 rounded-xl w-[95%]">
+                <h2 className="text-2xl font-semibold text-center pb-2 text-cyan-800">Product Selling Graph</h2>
                 <Chart chartType="ColumnChart" width="100%" height="400px" data={data} />
             </div>
         </div>
