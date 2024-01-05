@@ -29,10 +29,10 @@ const UserHome = () => {
     });
     return (
         <div className="p-20">
-            <h2 className="text-3xl">Hi, {user.displayName}</h2>
+            <h2 className="text-3xl text-center">Royal Activities of {user.displayName}</h2>
+            <div className="divider"></div>
             {/* Stats */}
-                <h4 className="text-3xl font-semibold text-center">Your current activities</h4>
-            <div className="stats shadow ">
+            <div className="stats shadow flex justify">
                 <div className="stat place-items-center">
                     <div className="stat-title">Order on process</div>
                     <div className="stat-value">2 Item</div>
@@ -51,7 +51,7 @@ const UserHome = () => {
                 </div>
             </div>
             {/* Chart div */}
-            <div className="mt-20 rounded-xl">
+            <div className="mt-20 rounded-xl flex w-[100%]">
                 <Chart
                     chartType="PieChart"
                     data={data}
