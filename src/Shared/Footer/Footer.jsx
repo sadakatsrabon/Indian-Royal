@@ -26,7 +26,9 @@ const Footer = () => {
                 <div className='m-auto'>
                     <h3 className='text-2xl text-yellow-400 text-center mx-auto'>Tipu Sultan</h3>
                     <p>Founder and CEO of Royal Group.</p>
-                    <Link to={"/portfolio_web_tipu_sultan"}><button className="btn btn-sm mx-auto btn-outline text-white">{"Portfolio >"}</button></Link>
+                    <div className="mx-auto">
+                    <Link to={"/portfolio_web_tipu_sultan"}><button className="btn btn-sm btn-outline text-white">{"Portfolio >"}</button></Link>
+                    </div>
                 </div>
 
             </footer>
