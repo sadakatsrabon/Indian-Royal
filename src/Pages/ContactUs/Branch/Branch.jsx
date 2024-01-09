@@ -4,7 +4,7 @@ const Branch = () => {
     return (
         <div>
             <div>
-                <div>Our Branch</div>
+                <div>Phonm Penh Branch</div>
                 <div>Our Branch</div>
                 <div>Our Branch</div>
             </div>
