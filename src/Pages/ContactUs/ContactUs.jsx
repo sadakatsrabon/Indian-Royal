@@ -1,5 +1,6 @@
-import Branch from "./Branch/Branch";
+
 import logo from '../../assets/logo.png'
+import RoyalBranch from './RoyalBranch/RoyalBranch';
 
 const ContactUs = () => {
     return (
@@ -7,7 +8,7 @@ const ContactUs = () => {
             <img className="fixed opacity-30" src={logo} alt="" />
             <div className="z-10">
                 <div>
-                    <Branch></Branch>
+                    <RoyalBranch></RoyalBranch>
                 </div>
                 <div className="pt-36 p-20 flex w-full justify-center relative">
                     <div className="flex flex-col gap-10">
