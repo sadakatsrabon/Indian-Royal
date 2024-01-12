@@ -3,7 +3,7 @@ import branchImg2 from "../../../assets/hotel/roual_branch/sihanoukville.webp"
 import branchImg3 from "../../../assets/hotel/roual_branch/phnompenh2.jpg"
 const RoyalBranch = () => {
   return (
-    <div>
+    <div className="flex">
       {/* Sihanoukville */}
       <div>
         <div className="card w-96 bg-base-100 shadow-xl image-full">
