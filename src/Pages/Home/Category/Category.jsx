@@ -26,11 +26,13 @@ const Category = () => {
           heading={"Our Food Categories"}
         ></SectionTitle>
         <div className='flex justify-around'>
-          <div>
-<h2 className='text-6xl font-bold'>Hi sir,</h2>
-<h2>You can see our royal category</h2>
+          <div className='my-auto'>
+            <h2 className='text-6xl font-bold'>Hi sir,</h2>
+            <h2 className='text-3xl'>Try to see our halal Royal Food category</h2>
+
+            <p className='w-96'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse corporis quibusdam porro dolore debitis nobis ullam explicabo commodi adipisci, accusantium ipsa inventore, minima dolorum praesentium dolorem quasi, molestias ipsam. Minima.</p>
           </div>
-          <div className='w-72'>
+          <div className='w-72 rounded-2xl'>
             <Swiper
               effect={'cards'}
               grabCursor={true}
@@ -39,66 +41,66 @@ const Category = () => {
             >
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Salad</h2>
                   <img className="w-72 h-full" src={slider1} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Soup</h2>
                   <img className="w-72 h-full" src={slider2} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Dessert</h2>
                   <img className="w-72 h-full" src={slider3} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Drinks</h2>
                   <img className="w-72 h-full" src={slider4} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Meet</h2>
                   <img className="w-72 h-full" src={slider5} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Prawn</h2>
                   <img className="w-72 h-full" src={slider1} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Fish</h2>
                   <img className="w-72 h-full" src={slider2} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Egg</h2>
                   <img className="w-72 h-full" src={slider3} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Rice</h2>
                   <img className="w-72 h-full" src={slider4} alt="Slide Image" />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div>
-                  <h2 className='text-xl font-bold'>Category</h2>
+                  <h2 className='text-xl font-bold'>Full Meal</h2>
                   <img className="w-72 h-full" src={slider5} alt="Slide Image" />
                 </div>
               </SwiperSlide>
             </Swiper>
-            
+
           </div>
         </div>
       </>
