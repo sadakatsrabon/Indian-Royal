@@ -9,9 +9,7 @@ import { EffectCards } from 'swiper/modules';
 // 
 
 
-import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css";
-import "./style.css"
 
 import slider1 from "../../../assets/home/slide1.jpg";
 import slider2 from "../../../assets/home/slide2.jpg";
@@ -22,16 +20,6 @@ import slider6 from "../../../assets/menu/banner3.jpg";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {
-
-
-  const [sliderRef] = useKeenSlider({
-    mode: "free-snap",
-    slides: {
-      origin: "center",
-      perView: 2,
-      spacing: 15,
-    },
-  })
   return (
     <section>
       <>
