@@ -12,7 +12,7 @@ const RoyalBranch = () => {
             <h2 className="card-title">Sihanoukville</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">Location</button>
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@ const RoyalBranch = () => {
             <h2 className="card-title">Phom Penh</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">Location</button>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ const RoyalBranch = () => {
             <h2 className="card-title">Siem Reap</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">Location</button>
             </div>
           </div>
         </div>
