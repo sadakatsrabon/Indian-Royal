@@ -1,3 +1,14 @@
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { EffectCards } from 'swiper/modules';
+
+// 
+// 
+// 
+
+
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css";
 import "./style.css"
@@ -23,10 +34,25 @@ const Category = () => {
   })
   return (
     <section>
+      <>
+      </>
       <SectionTitle
         heading={"Our Food Categories"}
       ></SectionTitle>
-      <div ref={sliderRef} className="keen-slider h-96 mb-12">
+      <Swiper
+        effect={'cards'}
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img className="w-72 h-full" src={slider1} alt="Slide Image" /></SwiperSlide>
+        <SwiperSlide><img className="w-72 h-full" src={slider2} alt="Slide Image" /></SwiperSlide>
+        <SwiperSlide><img className="w-72 h-full" src={slider3} alt="Slide Image" /></SwiperSlide>
+        <SwiperSlide><img className="w-72 h-full" src={slider4} alt="Slide Image" /></SwiperSlide>
+        <SwiperSlide><img className="w-72 h-full" src={slider5} alt="Slide Image" /></SwiperSlide>
+        <SwiperSlide><img className="w-72 h-full" src={slider6} alt="Slide Image" /></SwiperSlide>
+      </Swiper>
+      {/* <div ref={sliderRef} className="keen-slider h-96 mb-12">
         <div className="keen-slider__slide number-slide1">
           <h3 className="text-3xl uppercase fixed bottom-1 bg-black opacity-50 ">Drinks</h3>
           <img className="w-72 h-full" src={slider6} alt="Slide Image" />
@@ -96,7 +122,7 @@ const Category = () => {
           <img src={slider5} alt="Slide Image" />
         </div>
 
-      </div>
+      </div> */}
     </section>
   );
 };
