@@ -3,12 +3,7 @@ import 'swiper/css/effect-cards';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { EffectCards } from 'swiper/modules';
-
-// 
-// 
-// 
-
-
+ 
 import "keen-slider/keen-slider.min.css";
 
 import slider1 from "../../../assets/home/slide1.jpg";
@@ -25,12 +20,12 @@ const Category = () => {
         <SectionTitle
           heading={"Our Food Categories"}
         ></SectionTitle>
-        <div className='flex justify-around'>
-          <div className='my-auto'>
+        <div className='sm:flex justify-around p-10'>
+          <div className='my-auto mb-10'>
             <h2 className='text-6xl font-bold'>Hi sir,</h2>
             <h2 className='text-3xl'>Try to see our halal Royal Food category</h2>
 
-            <p className='w-96'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse corporis quibusdam porro dolore debitis nobis ullam explicabo commodi adipisci, accusantium ipsa inventore, minima dolorum praesentium dolorem quasi, molestias ipsam. Minima.</p>
+            <p className='md:w-96'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse corporis quibusdam porro dolore debitis nobis ullam explicabo commodi adipisci, accusantium ipsa inventore, minima dolorum praesentium dolorem quasi, molestias ipsam. Minima.</p>
           </div>
           <div className='w-72 rounded-2xl'>
             <Swiper
