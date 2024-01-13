@@ -20,7 +20,7 @@ const SocialLogin = () => {
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email };
                 console.log(loggedUser.displayName, loggedUser.email)
 
-                fetch('https://server-indian-royal-52pijzpld-sadakatsrabon.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

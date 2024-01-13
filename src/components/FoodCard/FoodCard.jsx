@@ -16,7 +16,7 @@ const FoodCard = ({ item }) => {
         console.log(item)
         if (user && user.email) {
             const cartItem = { foodId: _id, name, image, price, email: user.email }
-            fetch('https://server-indian-royal-52pijzpld-sadakatsrabon.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

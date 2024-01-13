@@ -17,7 +17,7 @@ const Testimonials = () => {
     console.log(rating);
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://server-indian-royal-52pijzpld-sadakatsrabon.vercel.app/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

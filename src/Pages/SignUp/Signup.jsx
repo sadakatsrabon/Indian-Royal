@@ -37,7 +37,7 @@ const Signup = () => {
                     .then(() => {
                         const savedUser = { name: name, email: email }
                         console.log(name, email)
-                        fetch('https://server-indian-royal-52pijzpld-sadakatsrabon.vercel.app/users', {
+                        fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
