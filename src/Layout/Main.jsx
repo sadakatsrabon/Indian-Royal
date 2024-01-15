@@ -4,7 +4,7 @@ import Nav from "../Shared/Nav/Nav";
 
 const Main = () => {
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     const noHeader = location.pathname.includes('signin') || location.pathname.includes('signup');
     return (
         <div className="bg-amber-100">
