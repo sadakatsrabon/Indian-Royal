@@ -10,7 +10,7 @@ const Main = () => {
         <div className="bg-amber-100">
             {noHeader || <Nav></Nav>}
             <Outlet></Outlet>
-            <Footer></Footer>
+            <Footer></Footer>   
         </div>
     );
 };

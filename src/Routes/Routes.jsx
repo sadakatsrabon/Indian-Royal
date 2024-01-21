@@ -81,7 +81,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'payHistory',
-                element:<PaymentHistory></PaymentHistory>
+                element: <PaymentHistory></PaymentHistory>
             },
             // Admin Routes
             {
