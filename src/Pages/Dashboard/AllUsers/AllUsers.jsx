@@ -28,7 +28,7 @@ const AllUsers = () => {
 
     // Promote user to admin role
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://server-indian-royal.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -162,7 +162,7 @@ export default AllUsers;
 
 
 //     const handleMakeAdmin = user => {
-//         fetch(`http://localhost:5000/users/admin/${user._id}`, {
+//         fetch(`https://server-indian-royal.vercel.app/users/admin/${user._id}`, {
 //             method: 'PATCH'
 //         })
 //             .then(res => res.json())
@@ -239,7 +239,7 @@ export default AllUsers;
 // // const AllUsers = () => {
 // //     // ToDo : need to sesolve some error in this page
 // //     const {data: users=[], refetch} = useQuery(['users'], async ()=> {
-// //         const res = await fetch('http://localhost:5000/users')
+// //         const res = await fetch('https://server-indian-royal.vercel.app/users')
 // //         return res.json;
 // //     } )
 // //     return (

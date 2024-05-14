@@ -124,7 +124,6 @@ const Menu = () => {
                 title="drinks"
                 img={dessertImg}
             ></MenuCategory>
-
         </div>
     );
 };

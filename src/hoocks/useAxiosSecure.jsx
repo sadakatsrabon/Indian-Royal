@@ -7,7 +7,7 @@ import useAuth from './useAuth';
 
 const axiosSecure = axios.create({
     // toDo: Change the base url after host
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://server-indian-royal.vercel.app'
 });
 
 const useAxiosSecure = () => {

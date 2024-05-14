@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
             // get and send access token
             //  toCheck: url
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post('https://server-indian-royal.vercel.app/jwt', { email: currentUser.email })
                     .then(data => {
                         // Set Access token to Local storage
                         // But not recomanded to set in local storage
